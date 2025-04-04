@@ -9,7 +9,7 @@ Este proyecto consiste en un sistema de delivery y pedidos para la botilleria Bo
 # Roles del Equipo
 
 # Licencia 
-
+Este proyecto utiliza la [MIT License](https://opensource.org/licenses/MIT).
 # Contribuciones
 Se agradece cualquier contribución al proyecto. Para contribuir, por favor, crea un fork del repositorio y envía una solicitud de pull request con tus cambios.
 # Contacto
