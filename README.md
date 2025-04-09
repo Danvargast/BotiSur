@@ -16,8 +16,11 @@ El desarrollo seguirá la metodología ágil Scrum, organizando el trabajo en sp
 
 # Roles del Equipo
 Lider de equipo: Daniel Vargas.
+
 Desarrollador Frontend: Yeisson Thomas.
+
 Desarrollador Backend: Alvaro Oyarzun.
+
 Diseñador UI/UX: Rodrigo Ruiz.
 
 # Licencia 
@@ -27,4 +30,4 @@ Este proyecto utiliza la [MIT License](https://opensource.org/licenses/MIT).
 Se agradece cualquier contribución al proyecto. Para contribuir, por favor, crea un fork del repositorio y envía una solicitud de pull request con tus cambios.
 
 # Contacto
-
+dan.vargast@duocuc.cl
