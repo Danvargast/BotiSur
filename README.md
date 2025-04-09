@@ -6,7 +6,9 @@ Este proyecto consiste en un sistema de delivery y pedidos para la botilleria Bo
 
 # Tecnologias usadas
 Frontend: HTML, CSS, JavaScript.
+
 Backend: Python.
+
 Base de datos: MySQL, MySQL Workbench.
 
 # Metodologia de Desarrollo
