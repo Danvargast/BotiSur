@@ -30,4 +30,4 @@ Este proyecto utiliza la [MIT License](https://opensource.org/licenses/MIT).
 Se agradece cualquier contribución al proyecto. Para contribuir, por favor, crea un fork del repositorio y envía una solicitud de pull request con tus cambios.
 
 # Contacto
-dan.vargast@duocuc.cl
+En caso de tener una duda, contactarse con dan.vargast@duocuc.cl
