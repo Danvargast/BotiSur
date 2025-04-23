@@ -9,7 +9,7 @@ Frontend: HTML, CSS, JavaScript.
 
 Backend: Python.
 
-Base de datos: MySQL, MySQL Workbench.
+Base de datos: MySQL, MySQL Workbench, Data Modeler
 
 # Metodologia de Desarrollo
 El desarrollo seguirá la metodología ágil Scrum, organizando el trabajo en sprints semanales. Esta estrategia permitirá una entrega progresiva y flexible, asegurando mejoras continuas durante el desarrollo del sistema.
