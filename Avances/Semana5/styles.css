@@ -1,0 +1,89 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('https://images.unsplash.com/photo-1597290282695-edc43d0e7129?q=80');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.login-container {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    width: 400px;
+    text-align: center;
+}
+
+.login-container h1 {
+    margin-bottom: 30px;
+    font-size: 32px;
+    color: #1a1a1a;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.login-container .input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.login-container .input-group input {
+    width: 100%;
+    padding: 15px 45px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+}
+
+.login-container .input-group input:focus {
+    border-color: #8B0000;
+    outline: none;
+}
+
+.login-container .input-group i {
+    position: absolute;
+    top: 50%;
+    left: 15px;
+    transform: translateY(-50%);
+    color: #8B0000;
+    font-size: 20px;
+}
+
+.login-container button {
+    width: 100%;
+    padding: 15px;
+    background-color: #8B0000;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.login-container button:hover {
+    background-color: #600000;
+}
+
+.login-container a {
+    display: block;
+    margin-top: 20px;
+    color: #8B0000;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.login-container a:hover {
+    color: #600000;
+    text-decoration: underline;
+}
