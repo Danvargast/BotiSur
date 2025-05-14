@@ -11,7 +11,7 @@ Backend: Python.
 
 Base de datos: MySQL, MySQL Workbench, Data Modeler, XAMPP.
 
-# Metodologia de Desarrollo
+# Metodologia de Desarrollo :calendar: 
 El desarrollo seguirá la metodología ágil Scrum, organizando el trabajo en sprints semanales. Esta estrategia permitirá una entrega progresiva y flexible, asegurando mejoras continuas durante el desarrollo del sistema.
 
 # Roles del Equipo :busts_in_silhouette:
@@ -26,7 +26,7 @@ Diseñador UI/UX: Rodrigo Ruiz.
 # Licencia :page_facing_up:
 Este proyecto utiliza la [MIT License](https://opensource.org/licenses/MIT).
 
-# Contribuciones 
+# Contribuciones :incoming_envelope: 
 Se agradece cualquier contribución al proyecto. Para contribuir, por favor, crea un fork del repositorio y envía una solicitud de pull request con tus cambios.
 
 # Contacto :email:
