@@ -1,7 +1,7 @@
 # Botilleria BotiSur :beer:
 Repositorio botilleria BotiSur
 
-# Descripcion del proyecto
+# Descripcion del proyecto :speech_balloon:
 Este proyecto consiste en un sistema de delivery y pedidos para la botilleria BotiSur, en la cual se podra pedir diversos tipos de productos, por ejemplo bebidas, cervezas, licores fuertes, etc. El sistema añadira todo lo que quieras comprar a el carrito de compra. Este proyecto almacena datos utilizando MySQL.
 
 # Tecnologias usadas :computer:
