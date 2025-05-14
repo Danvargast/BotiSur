@@ -14,7 +14,7 @@ Base de datos: MySQL, MySQL Workbench, Data Modeler, XAMPP.
 # Metodologia de Desarrollo
 El desarrollo seguirá la metodología ágil Scrum, organizando el trabajo en sprints semanales. Esta estrategia permitirá una entrega progresiva y flexible, asegurando mejoras continuas durante el desarrollo del sistema.
 
-# Roles del Equipo :busts_in_silhouette::busts_in_silhouette:
+# Roles del Equipo :busts_in_silhouette:
 Lider de equipo: Daniel Vargas.
 
 Desarrollador Frontend: Yeisson Thomas.
