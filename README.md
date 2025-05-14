@@ -23,11 +23,11 @@ Desarrollador Backend: Alvaro Oyarzun.
 
 Diseñador UI/UX: Rodrigo Ruiz.
 
-# Licencia 
+# Licencia :page_facing_up:
 Este proyecto utiliza la [MIT License](https://opensource.org/licenses/MIT).
 
-# Contribuciones
+# Contribuciones 
 Se agradece cualquier contribución al proyecto. Para contribuir, por favor, crea un fork del repositorio y envía una solicitud de pull request con tus cambios.
 
-# Contacto
+# Contacto :email:
 En caso de tener una duda, contactarse con dan.vargast@duocuc.cl **
