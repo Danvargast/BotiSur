@@ -41,11 +41,6 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-					<div class="custom-select-box">
-                    </div>
-                    <div class="right-phone-box">
-                        <p>Call US :- <a href="#"> +11 900 800 100</a></p>
-                    </div>
                     <div class="our-link">
                         <ul>
                             <li><a href="#"><i class="fa fa-user s_color"></i> Mi cuenta</a></li>
@@ -55,16 +50,15 @@
                     </div>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12">
-					<div class="login-box">
-						<select id="basic" class="selectpicker show-tick form-control" data-placeholder="Sign In">
-							<option>Registrarse</option>
-							<option>Iniciar Sesión</option>
-						</select>
-					</div>
+                    <div class="login-box d-flex justify-content-end align-items-center">
+                        <button type="button" class="btn btn-outline-primary mr-2">Registrarse</button>
+                        <button type="button" class="btn btn-primary">Iniciar Sesión</button>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
+    </div>
     </div>
     <!-- End Main Top -->
 
@@ -75,10 +69,11 @@
             <div class="container">
                 <!-- Start Header Navigation -->
                 <div class="navbar-header">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu" aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
-                    <i class="fa fa-bars"></i>
-                </button>
-                   <!-- <a class="navbar-brand" href="index.html"><img src="images/logo.png" class="logo" alt=""></a> Falta cambiar el tamaño --> 
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu"
+                        aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <!-- <a class="navbar-brand" href="index.html"><img src="images/logo.png" class="logo" alt=""></a> Falta cambiar el tamaño -->
                 </div>
                 <!-- End Header Navigation -->
 
@@ -86,18 +81,17 @@
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
                         <li class="nav-item active"><a class="nav-link" href="index.html">Inicio</a></li>
-                        <li class="nav-item"><a class="nav-link" href="about.html">¿Quienes somos?</a></li>
                         <li class="dropdown">
                             <a href="#" class="nav-link dropdown-toggle arrow" data-toggle="dropdown">Tienda</a>
                             <ul class="dropdown-menu">
-								<li><a href="shop.html">Bebidas</a></li>
-								<li><a href="shop-detail.html">Cervezas</a></li>
-                                <li><a href="cart.html">Whisky</a></li>
-                                <li><a href="checkout.html">Vinos</a></li>
-                                <li><a href="my-account.html">Destilados</a></li>
+                                <li><a href="shop.html">Todo</a></li>
+                                <li><a href="shop-detail.html">Vinos</a></li>
+                                <li><a href="cart.html">Cervezas</a></li>
+                                <li><a href="checkout.html">Whisky</a></li>
                             </ul>
                         </li>
                         <li class="nav-item"><a class="nav-link" href="gallery.html">Galeria</a></li>
+                        <li class="nav-item"><a class="nav-link" href="about.html">Sobre nosotros</a></li>
                         <li class="nav-item"><a class="nav-link" href="contact-us.html">Contacto</a></li>
                     </ul>
                 </div>
@@ -108,44 +102,17 @@
                     <ul>
                         <li class="search"><a href="#"><i class="fa fa-search"></i></a></li>
                         <li class="side-menu">
-							<a href="#">
-								<i class="fa fa-shopping-bag"></i>
-								<span class="badge">1</span>
-								<p>Carrito</p>
-							</a>
-						</li>
+                            <a href="#">
+                                <i class="fa fa-shopping-bag"></i>
+                                <span class="badge">1</span>
+                                <p>Carrito</p>
+                            </a>
+                        </li>
                     </ul>
                 </div>
                 <!-- End Atribute Navigation -->
             </div>
-            <!-- Start Side Menu -->
-            <div class="side">
-                <a href="#" class="close-side"><i class="fa fa-times"></i></a>
-                <li class="cart-box">
-                    <ul class="cart-list">
-                        <li>
-                            <a href="#" class="photo"><img src="images/img-pro-01" class="cart-thumb" alt="" /></a>
-                            <h6><a href="#">Delica omtantur </a></h6>
-                            <p>1x - <span class="price">$80.00</span></p>
-                        </li>
-                        <li>
-                            <a href="#" class="photo"><img src="images/img-pro-02.jpg" class="cart-thumb" alt="" /></a>
-                            <h6><a href="#">Omnes ocurreret</a></h6>
-                            <p>1x - <span class="price">$60.00</span></p>
-                        </li>
-                        <li>
-                            <a href="#" class="photo"><img src="images/img-pro-03.jpg" class="cart-thumb" alt="" /></a>
-                            <h6><a href="#">Agam facilisis</a></h6>
-                            <p>1x - <span class="price">$40.00</span></p>
-                        </li>
-                        <li class="total">
-                            <a href="#" class="btn btn-default hvr-hover btn-cart">VIEW CART</a>
-                            <span class="float-right"><strong>Total</strong>: $180.00</span>
-                        </li>
-                    </ul>
-                </li>
-            </div>
-            <!-- End Side Menu -->
+
         </nav>
         <!-- End Navigation -->
     </header>
@@ -172,7 +139,8 @@
                     <div class="row">
                         <div class="col-md-12">
                             <h1 class="m-b-20"><strong>Bienvenido a <br> Botisur</strong></h1>
-                            <p class="m-b-40">See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.</p>
+                            <p class="m-b-40">Descubre la mejor selección de cervezas, vinos y destilados para cada
+                                ocasión. ¡Calidad, variedad y precios especiales en Botisur!</p>
                             <p><a class="btn hvr-hover" href="#">Comprar</a></p>
                         </div>
                     </div>
@@ -184,7 +152,9 @@
                     <div class="row">
                         <div class="col-md-12">
                             <h1 class="m-b-20"><strong>Bienvenido a <br> Botisur</strong></h1>
-                            <p class="m-b-40">See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.</p>
+                            <p class="m-b-40">Disfruta de una amplia variedad de cervezas, vinos y destilados
+                                seleccionados especialmente para ti. Vive la experiencia Botisur y encuentra el producto
+                                ideal para cada momento.</p>
                             <p><a class="btn hvr-hover" href="#">Comprar</a></p>
                         </div>
                     </div>
@@ -196,8 +166,10 @@
                     <div class="row">
                         <div class="col-md-12">
                             <h1 class="m-b-20"><strong>Bienvenido a <br> Botisur</strong></h1>
-                            <p class="m-b-40">See how your users experience your website in realtime or view <br> trends to see any changes in performance over time.</p>
-                            <p><a class="btn hvr-hover" href="#">Shop New</a></p>
+                            <p class="m-b-40">Descubre cómo nuestros clientes disfrutan de la mejor selección de bebidas
+                                en Botisur. Explora nuestras tendencias y novedades para encontrar el producto ideal en
+                                cada ocasión.</p>
+                            <p><a class="btn hvr-hover" href="#">Comprar</a></p>
                         </div>
                     </div>
                 </div>
@@ -209,147 +181,251 @@
         </div>
     </div>
     <!-- End Slider -->
-
-    <!-- Start Categories  -->
-    <!--Falta cambiar todo esto 
-    <div class="categories-shop">
+    <section class="products-box">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <div class="shop-cat-box">
-                        <img class="img-fluid" src="images/categories_img_01.jpg" alt="" />
-                        <a class="btn hvr-hover" href="#">Lorem ipsum dolor</a>
+            <div class="title-all text-center">
+                <h1>🔥 Ofertas de la Semana 🔥</h1>
+            </div>
+            <div id="ofertasCarousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row g-4">
+                            <!-- Slide 1: Tarjeta 1 -->
+                            <div class="col-6">
+                                <div class="card h-100 position-relative d-flex flex-column">
+                                    <div class="badge bg-danger text-white position-absolute"
+                                        style="top:0.5rem; right:0.5rem;">
+                                        🔥 ¡Oferta!
+                                    </div>
+                                    <img class="card-img-top" src="images/packcerveza.jpg" alt="Cerveza corona">
+                                    <div class="card-body text-center">
+                                        <h5 class="fw-bolder">Pack cervezas corona</h5>
+                                        <p>
+                                            <del class="text-muted" style="color:#222 !important;">$4.000</del>
+                                            <strong style="color:#222;">$2.200</strong>
+                                        </p>
+                                        <div class="countdown" data-end="2025-05-30T23:59:59" style="color:#222;">
+                                            00:00:00</div>
+                                    </div>
+                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent mt-auto">
+                                        <div class="text-center">
+                                            <a href="#" class="btn btn-outline-dark mt-auto">Añadir al carrito</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Slide 1: Tarjeta 2 -->
+                            <div class="col-6">
+                                <div class="card h-100 position-relative d-flex flex-column">
+                                    <div class="badge bg-danger text-white position-absolute"
+                                        style="top:0.5rem; right:0.5rem;">
+                                        🔥 ¡Oferta!
+                                    </div>
+                                    <img class="card-img-top" src="images/vinotintoreserva.jpg" alt="Vino Tinto">
+                                    <div class="card-body text-center">
+                                        <h5 class="fw-bolder">Vino Tinto Reserva</h5>
+                                        <p>
+                                            <del class="text-muted" style="color:#222 !important;">$15.000</del>
+                                            <strong style="color:#222;">$10.000</strong>
+                                        </p>
+                                        <div class="countdown" data-end="2025-05-28T23:59:59" style="color:#222;">
+                                            00:00:00</div>
+                                    </div>
+                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent mt-auto">
+                                        <div class="text-center">
+                                            <a href="#" class="btn btn-outline-dark mt-auto">Añadir al carrito</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row g-4">
+                            <!-- Slide 2: Tarjeta 3 -->
+                            <div class="col-6">
+                                <div class="card h-100 position-relative d-flex flex-column">
+                                    <div class="badge bg-danger text-white position-absolute"
+                                        style="top:0.5rem; right:0.5rem;">
+                                        🔥 ¡Oferta!
+                                    </div>
+                                    <img class="card-img-top" src="images/combopiscola.jpg" alt="promo piscola">
+                                    <div class="card-body text-center">
+                                        <h5 class="fw-bolder">Promo Piscola</h5>
+                                        <p>
+                                            <del class="text-muted" style="color:#222 !important;">$12.000</del>
+                                            <strong style="color:#222;">$10.000</strong>
+                                        </p>
+                                        <div class="countdown" data-end="2025-05-29T23:59:59" style="color:#222;">
+                                            00:00:00</div>
+                                    </div>
+                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent mt-auto">
+                                        <div class="text-center">
+                                            <a href="#" class="btn btn-outline-dark mt-auto">Añadir al carrito</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Slide 2: Tarjeta 4 -->
+                            <div class="col-6">
+                                <div class="card h-100 position-relative d-flex flex-column">
+                                    <div class="badge bg-danger text-white position-absolute"
+                                        style="top:0.5rem; right:0.5rem;">
+                                        🔥 ¡Oferta!
+                                    </div>
+                                    <img class="card-img-bottom" src="images/bluelabel.jpg" alt="blue label">
+                                    <div class="card-body text-center">
+                                        <h5 class="fw-bolder">Blue Label Johnnie Walker</h5>
+                                        <p>
+                                            <del class="text-muted" style="color:#222 !important;">$300.000</del>
+                                            <strong style="color:#222;">$250.000</strong>
+                                        </p>
+                                        <div class="countdown" data-end="2025-05-27T23:59:59" style="color:#222;">
+                                            00:00:00</div>
+                                    </div>
+                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent mt-auto">
+                                        <div class="text-center">
+                                            <a href="#" class="btn btn-outline-dark mt-auto">Añadir al carrito</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <div class="shop-cat-box">
-                        <img class="img-fluid" src="images/categories_img_02.jpg" alt="" />
-                        <a class="btn hvr-hover" href="#">Lorem ipsum dolor</a>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                    <div class="shop-cat-box">
-                        <img class="img-fluid" src="images/categories_img_03.jpg" alt="" />
-                        <a class="btn hvr-hover" href="#">Lorem ipsum dolor</a>
-                    </div>
-                </div>
+                <!-- Controles del carrusel -->
+                <a class="carousel-control-prev" href="#ofertasCarousel" role="button" data-slide="prev">
+                    <span aria-hidden="true"><i class="fa fa-angle-left"></i></span>
+                    <span class="sr-only">Anterior</span>
+                </a>
+                <a class="carousel-control-next" href="#ofertasCarousel" role="button" data-slide="next">
+                    <span aria-hidden="true"><i class="fa fa-angle-right"></i></span>
+                    <span class="sr-only">Siguiente</span>
+                </a>
             </div>
         </div>
-    </div>
-    -->
-    <!-- End Categories -->
-	<!-- Esto también falta cambiar
-	<div class="box-add-products">
-		<div class="container">
-			<div class="row">
-				<div class="col-lg-6 col-md-6 col-sm-12">
-					<div class="offer-box-products">
-						<img class="img-fluid" src="images/add-img-01.jpg" alt="" />
-					</div>
-				</div>
-				<div class="col-lg-6 col-md-6 col-sm-12">
-					<div class="offer-box-products">
-						<img class="img-fluid" src="images/add-img-02.jpg" alt="" />
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-    -->
-    <!-- Start Products  -->
+    </section>
+
+
+    <style>
+        /* Ajustes de estilos adicionales para animaciones y temporizador */
+        .offer-badge {
+            top: 0.5rem;
+            right: 0.5rem;
+            /* Ejemplo: efecto de pulso (usa @keyframes predefinidos en style.css) */
+            animation: bounceY 1s infinite;
+        }
+
+        .countdown {
+            font-size: 0.9rem;
+            color: #dc3545;
+            /* color rojo oscuro para urgencia */
+            font-weight: bold;
+            margin-top: 0.5rem;
+        }
+    </style>
+
+    <script>
+        // Script de cuenta regresiva para cada tarjeta de oferta
+        document.querySelectorAll('.countdown').forEach(function (el) {
+            var endTime = new Date(el.getAttribute('data-end')).getTime();
+            var timer = setInterval(function () {
+                var now = new Date().getTime();
+                var distance = endTime - now;
+                if (distance < 0) {
+                    clearInterval(timer);
+                    el.innerText = "Oferta terminada";
+                    return;
+                }
+                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+                // Formatear como DD:HH:MM:SS
+                el.innerText = (days > 0 ? days + "d " : "")
+                    + ("0" + hours).slice(-2) + "h:"
+                    + ("0" + minutes).slice(-2) + "m:"
+                    + ("0" + seconds).slice(-2) + "s";
+            }, 1000);
+        });
+    </script>
+
+
+    <!-- Start Products -->
     <div class="products-box">
         <div class="container">
             <div class="row">
-            <div class="col-lg-12">
-                <div class="title-all text-center">
-                <h1>Bebidas y licores</h1>
-                <p> Encuentra aquí lo mejor para celebrar tus momentos. Licores, cervezas y más, ¡al alcance de tu mano y a precios increíbles!</p>
-                </div>
-            </div>
-            </div>
-            <div class="row">
-            <div class="col-lg-12">
-                <div class="special-menu text-center">
-                <div class="button-group filter-button-group">
-                    <button class="active" data-filter="*">Todo</button>
-                    <button data-filter=".top-featured">Más vendido</button>
-                    <button data-filter=".best-seller">Ofertas</button>
-                </div>
-                </div>
-            </div>
-            </div>
-
-            <div class="row special-list">
-            <div class="col-lg-3 col-md-6 special-grid best-seller">
-                <div class="products-single fix">
-                <div class="box-img-hover">
-                    <a href="#"><img src="images/torobayo.jpg" class="img-fluid" alt="Image"></a>
-                    <div class="mask-icon">
-                    <a href="shop-detail.html"></a>
-                    <a class="cart" href="#">Añadir al carrito</a>
+                <div class="col-lg-12">
+                    <div class="title-all text-center">
+                        <h1>Nuestros productos más vendidos</h1>
+                        <p>Explora nuestra selección de cervezas, vinos y refrescos para cada ocasión. ¡Calidad y sabor
+                            al mejor precio!</p>
                     </div>
                 </div>
-                <div class="why-text">
-                    <h4>Cerveza Torobayo</h4>
-                    <h5> <del>$8.500</del> $6.800 (-20%)</h5>
-                </div>
-                </div>
             </div>
-
-            <div class="col-lg-3 col-md-6 special-grid top-featured">
-                <div class="products-single fix">
-                <div class="box-img-hover">
-                    <div class="type-lb">
-                    <p class="new"></p>
-                    </div>
-                    <img src="images/cervezacristal.jpg" class="img-fluid" alt="Image">
-                    <div class="mask-icon">
-
-                    <a class="cart" href="#">Añadir al carrito</a>
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+                <div class="col mb-5">
+                    <div class="card h-100 position-relative">
+                        <img class="card-img-top" src="images/torobayo.jpg" alt="Cerveza Torobayo" />
+                        <div class="card-body p-4 text-center">
+                            <h5 class="fw-bolder">Cerveza Torobayo</h5>
+                            $8.500
+                        </div>
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center">
+                                <a class="btn btn-outline-dark mt-auto" href="#">Añadir al carrito</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="why-text">
-                    <h4>Cerveza Cristal</h4>
-                    <h5> $2300</h5>
-                </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 special-grid top-featured">
-                <div class="products-single fix">
-                <div class="box-img-hover">
-                    <img src="images/bebida.jpg" class="img-fluid" alt="Image">
-                    <div class="mask-icon">
-                    <a class="cart" href="#">Añadir al carrito</a>
+                <div class="col mb-5">
+                    <div class="card h-100 position-relative">
+                        <img class="card-img-top" src="images/cervezacristal.jpg" alt="Cerveza Cristal" />
+                        <div class="card-body p-4 text-center">
+                            <h5 class="fw-bolder">Cerveza Cristal</h5>
+                            $2.300
+                        </div>
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center">
+                                <a class="btn btn-outline-dark mt-auto" href="#">Añadir al carrito</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="why-text">
-                    <h4>Bebida Coca-cola</h4>
-                    <h5> $2000</h5>
-                </div>
-                </div>
-            </div>
-
-            <div class="col-lg-3 col-md-6 special-grid best-seller">
-                <div class="products-single fix">
-                <div class="box-img-hover">
-     
-                    <img src="images/vino.jpg" class="img-fluid" alt="Image">
-                    <div class="mask-icon">
-                    
-                    <a class="cart" href="#">Añadir al carrito</a>
+                <div class="col mb-5">
+                    <div class="card h-100 position-relative">
+                        <img class="card-img-top" src="images/bebida.jpg" alt="Bebida Coca-Cola" />
+                        <div class="card-body p-4 text-center">
+                            <h5 class="fw-bolder">Bebida Coca-Cola</h5>
+                            $2.000
+                        </div>
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center">
+                                <a class="btn btn-outline-dark mt-auto" href="#">Añadir al carrito</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="why-text">
-                    <h4>Vino Cabernet Sauvignon</h4>
-                    <h5> <del>$12.000</del> $9.600 (-20%)</h5>
+                <div class="col mb-5">
+                    <div class="card h-100 position-relative">
+                        <img class="card-img-top" src="images/vino.jpg" alt="Vino Cabernet Sauvignon" />
+                        <div class="card-body p-4 text-center">
+                            <h5 class="fw-bolder">Vino Cabernet Sauvignon</h5>
+                            $12.000
+                        </div>
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center">
+                                <a class="btn btn-outline-dark mt-auto" href="#">Añadir al carrito</a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                </div>
-            </div>
             </div>
         </div>
     </div>
-    <!-- End Products  -->
+    <!-- End Products -->
+
+
 
 
 
@@ -363,7 +439,9 @@
                         <div class="footer-top-box">
                             <h3>Horario de atención</h3>
                             <ul class="list-time">
-                                <li>Lunes a Viernes: 08.00am a 05.00pm</li> <li>Sábado: 10.00am a 08.00pm</li> <li>Domingo: <span>Cerrado</span></li>
+                                <li>Lunes a Viernes: 08.00am a 05.00pm</li>
+                                <li>Sábado: 10.00am a 08.00pm</li>
+                                <li>Domingo: <span>Cerrado</span></li>
                             </ul>
                         </div>
                     </div>
@@ -398,8 +476,11 @@
                     <div class="col-lg-4 col-md-12 col-sm-12">
                         <div class="footer-widget">
                             <h4>Acerca de Botisur</h4>
-                            <p>En Botisur, nos apasiona ofrecerte la mejor selección de licores y bebidas para tus celebraciones y momentos especiales. ¡Descubre nuestra variedad y disfruta de la calidad que nos distingue!</p> 
-                            <p>Encuentra el regalo perfecto o el complemento ideal para tus reuniones. ¡Brindamos por ti!</p> 							
+                            <p>En Botisur, nos apasiona ofrecerte la mejor selección de licores y bebidas para tus
+                                celebraciones y momentos especiales. ¡Descubre nuestra variedad y disfruta de la calidad
+                                que nos distingue!</p>
+                            <p>Encuentra el regalo perfecto o el complemento ideal para tus reuniones. ¡Brindamos por
+                                ti!</p>
                         </div>
                     </div>
                     <div class="col-lg-4 col-md-12 col-sm-12">
@@ -420,13 +501,16 @@
                             <h4>Contáctanos</h4>
                             <ul>
                                 <li>
-                                    <p><i class="fas fa-map-marker-alt"></i>Dirección: Av. Los Robles 1234, <br>Puerto Montt, Región de los Lagos </p>
+                                    <p><i class="fas fa-map-marker-alt"></i>Dirección: Av. Los Robles 1234, <br>Puerto
+                                        Montt, Región de los Lagos </p>
                                 </li>
                                 <li>
-                                    <p><i class="fas fa-phone-square"></i>Teléfono: <a href="tel:+56912345678">+56 9 1234 5678</a></p>
+                                    <p><i class="fas fa-phone-square"></i>Teléfono: <a href="tel:+56912345678">+56 9
+                                            1234 5678</a></p>
                                 </li>
                                 <li>
-                                    <p><i class="fas fa-envelope"></i>Email: <a href="mailto:contacto@botisur.cl">contacto@botisur.cl</a></p>
+                                    <p><i class="fas fa-envelope"></i>Email: <a
+                                            href="mailto:contacto@botisur.cl">contacto@botisur.cl</a></p>
                                 </li>
                             </ul>
                         </div>
