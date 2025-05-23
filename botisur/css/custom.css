@@ -1,0 +1,81 @@
+/* Estilos para categorías destacadas */
+.category-card {
+  overflow: hidden;
+  text-decoration: none;
+}
+.category-card img {
+  transition: transform 0.3s ease;
+}
+.category-card .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  transition: background 0.3s ease;
+}
+.category-card:hover img {
+  transform: scale(1.1);
+}
+.category-card:hover .overlay {
+  background: rgba(0, 0, 0, 0.6);
+}
+.category-card .overlay h3 {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+/* Estilos generales */
+.text-green {
+  color: #b0b435 !important;
+}
+.about-section {
+  background: #f8f9fa;
+}
+.about-section .col-md-6 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.about-section p {
+  text-align: justify;
+}
+/* Estilos personalizados para el carrusel de Ofertas de la Semana */
+#ofertasCarousel .col {
+  /* Centrar la tarjeta en su columna */
+  display: flex;
+  justify-content: center;
+}
+
+#ofertasCarousel .card {
+  /* Tamaño reducido y centrado */
+  max-width: 90%;
+  margin: auto;
+
+  /* Bordes redondeados suaves */
+  border-radius: 10px;
+  overflow: hidden;
+
+  /* Sombra suave por defecto */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+  /* Transición para transform y sombra al hover */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#ofertasCarousel .card-img-top,
+#ofertasCarousel .card-img-bottom {
+  /* Altura máxima uniforme y ajuste de imagen */
+  max-height: 280px;
+  width: 100%;
+  object-fit: cover;
+}
+
+#ofertasCarousel .card:hover {
+  /* Efecto hover: zoom leve y sombra más intensa */
+  transform: scale(1.03);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}

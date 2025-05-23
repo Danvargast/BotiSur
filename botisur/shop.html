@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Botisur | Tienda</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/custom.css">
+    <style>
+        .category-card .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="main-header">
+        <!-- Start Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav">
+            <div class="container">
+                <!-- Start Header Navigation -->
+                <div class="navbar-header">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu"
+                        aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                    <!-- <a class="navbar-brand" href="index.html"><img src="images/logo.png" class="logo" alt=""></a> Falta cambiar el tamaño -->
+                </div>
+                <!-- End Header Navigation -->
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
+                        <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                        <li class="nav-item active"><a class="nav-link" href="shop.html">Tienda</a></li>
+                        <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse -->
+
+            </div>
+
+        </nav>
+        <!-- End Navigation -->
+    </header>
+
+    <!-- Sección de Filtros de Categoría -->
+    <section id="categorias" class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4 text-green">Filtros</h2>
+            <div class="row justify-content-center mb-4">
+                <div class="col-auto">
+                    <button class="btn btn-outline-success filter-btn active" data-filter="all">Todo</button>
+                    <button class="btn btn-outline-success filter-btn" data-filter="vinos">Vinos</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        // Asignar categorías a los productos
+        document.addEventListener('DOMContentLoaded', function () {
+            // Asignar data-category a cada producto
+            const productos = document.querySelectorAll('.card');
+            productos[3].setAttribute('data-category', 'vinos');
+            productos[4].setAttribute('data-category', 'vinos');
+            productos[5].setAttribute('data-category', 'vinos');
+            
+
+            // Filtro
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function () {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    const filter = this.getAttribute('data-filter');
+                    productos.forEach(card => {
+                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                            card.parentElement.style.display = '';
+                        } else {
+                            card.parentElement.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+        
+    </script>
+
+    <!-- Título de Página -->
+    <div class="container mt-5 mb-3">
+        <div class="title-all text-center">
+            <h1>Tienda Botisur</h1>
+            <p>Explora nuestra gran variedad de productos</p>
+        </div>
+    </div>
+
+    <!-- Productos -->
+    <div class="container">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col mb-4">
+                <div class="card h-100">
+                    <img src="images/torobayo.jpg" class="card-img-top" alt="Cerveza Torobayo">
+                    <div class="card-body text-center">
+                        <h5 class="fw-bolder">Cerveza Torobayo</h5>
+                        <p>$8.500</p>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="#" class="btn btn-outline-dark">Añadir al carrito</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-4">
+                <div class="card h-100">
+                    <img src="images/cervezacristal.JPG" class="card-img-top" alt="Cerveza cristal">
+                    <div class="card-body text-center">
+                        <h5 class="fw-bolder">Cerveza Cristal</h5>
+                        <p>$10.000</p>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="#" class="btn btn-outline-dark">Añadir al carrito</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-4">
+                <div class="card h-100">
+                    <img src="images/bluelabel.jpg" class="card-img-top" alt="Blue Label">
+                    <div class="card-body text-center">
+                        <h5 class="fw-bolder">Blue Label Johnnie Walker</h5>
+                        <p>$300.000</p>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="#" class="btn btn-outline-dark">Añadir al carrito</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Segunda fila de productos -->
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            <div class="col mb-4">
+                <div class="card h-100">
+                    <img src="images/vinopx.jpg" class="card-img-top" alt="vino px">
+                    <div class="card-body text-center">
+                        <h5 class="fw-bolder">Vino PX</h5>
+                        <p>$7.000</p>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="#" class="btn btn-outline-dark">Añadir al carrito</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-4">
+                <div class="card h-100">
+                    <img src="images/vinogato.jpg" class="card-img-top" alt="Vino gato">
+                    <div class="card-body text-center">
+                        <h5 class="fw-bolder">Vino Gato</h5>
+                        <p>$9.500</p>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="#" class="btn btn-outline-dark">Añadir al carrito</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col mb-4">
+                <div class="card h-100">
+                    <img src="images/vino.jpg" class="card-img-top" alt="Vino">
+                    <div class="card-body text-center">
+                        <h5 class="fw-bolder">Vino</h5>
+                        <p>$15.000</p>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="#" class="btn btn-outline-dark">Añadir al carrito</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white mt-5">
+        <div class="container py-4">
+            <div class="row">
+                <div class="col-md-6">
+                    <h5>Sobre Botisur</h5>
+                    <p>Ofrecemos las mejores bebidas para tus celebraciones, con atención y rapidez en cada pedido.</p>
+                </div>
+                <div class="col-md-6 text-md-right">
+                    <h5>Contáctanos</h5>
+                    <p>Email: contacto@botisur.cl</p>
+                    <p>Teléfono: +56 9 1234 5678</p>
+                </div>
+            </div>
+        </div>
+        <div class="bg-secondary text-center py-2">
+            <p class="mb-0">&copy; 2025 Botisur. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
