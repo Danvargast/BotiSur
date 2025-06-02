@@ -9,6 +9,53 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/custom.css">
+
+    <style>
+    #carrito-panel {
+        position: fixed;
+        top: 0;
+        right: -400px;
+        width: 350px;
+        height: 100%;
+        background-color: white;
+        box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+        transition: right 0.3s ease;
+        padding: 20px;
+        overflow-y: auto;
+        z-index: 1000;
+    }
+
+    #carrito-panel.abierto {
+        right: 0;
+    }
+
+    #carrito-toggle {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        background-color: #28a745;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    #carrito-panel h4 {
+        margin-top: 0;
+    }
+
+    #cerrar-carrito {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: none;
+        border: none;
+        font-size: 1.2rem;
+        cursor: pointer;
+    }
+</style>
     <style>
         .category-card .overlay {
             position: absolute;
@@ -209,6 +256,91 @@
 
     <script src="js/jquery.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
+
+    <!-- Botón flotante para abrir carrito -->
+<button id="carrito-toggle">🛒 Ver Carrito</button>
+
+<!-- Panel lateral del carrito -->
+<div id="carrito-panel">
+    <button id="cerrar-carrito">✖</button>
+    <h4>🛒 Tu Carrito</h4>
+    <ul id="carrito-lista" class="list-group mb-3"></ul>
+    <p><strong>Total:</strong> $<span id="carrito-total">0</span></p>
+</div>
+
+<script>
+    const carrito = [];
+
+    document.querySelectorAll('.card-footer .btn').forEach((boton, index) => {
+        boton.addEventListener('click', (e) => {
+            e.preventDefault();
+            const card = boton.closest('.card');
+            const nombre = card.querySelector('h5').innerText;
+            const precioTexto = card.querySelector('p').innerText.replace('$', '').replace(/\./g, '');
+            const precio = parseInt(precioTexto);
+            agregarAlCarrito(nombre, precio);
+        });
+    });
+
+    function agregarAlCarrito(nombre, precio) {
+        const productoExistente = carrito.find(p => p.nombre === nombre);
+        if (productoExistente) {
+            productoExistente.cantidad++;
+        } else {
+            carrito.push({ nombre, precio, cantidad: 1 });
+        }
+        actualizarCarrito();
+        abrirCarrito();
+    }
+
+    function actualizarCarrito() {
+        const lista = document.getElementById('carrito-lista');
+        lista.innerHTML = '';
+        let total = 0;
+
+        if (carrito.length === 0) {
+            lista.innerHTML = '<li class="list-group-item text-center">Tu carrito está vacío.</li>';
+            document.getElementById('carrito-total').innerText = '0';
+            return;
+        }
+
+        carrito.forEach((producto, index) => {
+            total += producto.precio * producto.cantidad;
+            const li = document.createElement('li');
+            li.className = 'list-group-item d-flex justify-content-between align-items-center';
+            li.innerHTML = `
+                ${producto.nombre} x${producto.cantidad} - $${(producto.precio * producto.cantidad).toLocaleString()}
+                <button class="btn btn-danger btn-sm" onclick="eliminarDelCarrito(${index})">Eliminar</button>
+            `;
+            lista.appendChild(li);
+        });
+
+        document.getElementById('carrito-total').innerText = total.toLocaleString();
+    }
+
+    function eliminarDelCarrito(index) {
+        carrito.splice(index, 1);
+        actualizarCarrito();
+    }
+
+    function abrirCarrito() {
+        document.getElementById('carrito-panel').classList.add('abierto');
+        document.getElementById('carrito-toggle').style.display = 'none';  // Ocultar botón
+    }
+
+    function cerrarCarrito() {
+        document.getElementById('carrito-panel').classList.remove('abierto');
+        document.getElementById('carrito-toggle').style.display = 'block'; // Mostrar botón
+    }
+
+    document.getElementById('carrito-toggle').addEventListener('click', abrirCarrito);
+    document.getElementById('cerrar-carrito').addEventListener('click', cerrarCarrito);
+
+    document.addEventListener('DOMContentLoaded', () => {
+        actualizarCarrito();
+    });
+</script>
+
 </body>
 
 </html>
