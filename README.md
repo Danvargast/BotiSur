@@ -7,11 +7,10 @@ Repositorio botilleria BotiSur
 Este proyecto consiste en un sistema de delivery y pedidos para la botilleria BotiSur, en la cual se podra pedir diversos tipos de productos, por ejemplo bebidas, cervezas, licores fuertes, etc. El sistema añadira todo lo que quieras comprar a el carrito de compra. Este proyecto almacena datos utilizando MySQL.
 
 # Tecnologias usadas :computer:
-Frontend: HTML, CSS, JavaScript.
-
-Backend: Python.
-
-Base de datos: MySQL, Data Modeler, XAMPP, phpMyAdmin.
+  |      Frontend       |      Backend    |    Base de datos       |
+  |---------------------|-----------------|------------------------|
+  |HTML, CSS, JavaScript|      Python     |MySQL,XAMPP, phpMyAdmin |
+  |<img src="https://github.com/Danvargast/BotiSur/blob/7d915fe797034d3fb5e7c271d6ce60cd392837e9/Avances/semana%2011/HTML-5-Badge-Logo.png" width="70">|                 |
 
 # Metodologia de Desarrollo :calendar: 
 El desarrollo seguirá la metodología ágil Scrum, organizando el trabajo en sprints semanales. Esta estrategia permitirá una entrega progresiva y flexible, asegurando mejoras continuas durante el desarrollo del sistema.
