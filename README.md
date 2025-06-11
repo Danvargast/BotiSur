@@ -10,7 +10,7 @@ Este proyecto consiste en un sistema de delivery y pedidos para la botilleria Bo
   |      Frontend       |      Backend    |    Base de datos       |
   |---------------------|-----------------|------------------------|
   |HTML, CSS, JavaScript|      Python     |MySQL,XAMPP, phpMyAdmin |
-  |<img src="https://github.com/Danvargast/BotiSur/blob/7d915fe797034d3fb5e7c271d6ce60cd392837e9/Avances/semana%2011/HTML-5-Badge-Logo.png" width="70">|                 |
+  |<img src="https://github.com/Danvargast/BotiSur/blob/7d915fe797034d3fb5e7c271d6ce60cd392837e9/Avances/semana%2011/HTML-5-Badge-Logo.png" width="60"> <img src="https://github.com/Danvargast/BotiSur/blob/ff97c44ccc48ff56414a9695ff8a659e2972af65/Avances/semana%2011/css%20icon.png" width="60">|                 |
 
 # Metodologia de Desarrollo :calendar: 
 El desarrollo seguirá la metodología ágil Scrum, organizando el trabajo en sprints semanales. Esta estrategia permitirá una entrega progresiva y flexible, asegurando mejoras continuas durante el desarrollo del sistema.
