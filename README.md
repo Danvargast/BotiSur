@@ -10,7 +10,7 @@ Este proyecto consiste en un sistema de delivery y pedidos para la botilleria Bo
   |      Frontend       |      Backend    |    Base de datos       |
   |---------------------|-----------------|------------------------|
   |HTML, CSS, JavaScript|      Python     |MySQL,XAMPP, phpMyAdmin |
-  |<img src="https://github.com/Danvargast/BotiSur/blob/7d915fe797034d3fb5e7c271d6ce60cd392837e9/Avances/semana%2011/HTML-5-Badge-Logo.png" width="50"> <img src="https://github.com/Danvargast/BotiSur/blob/5c2abb5d19d6814bc22e4b7a21eeb310302b2a02/Avances/semana%2011/css-3.png" width="40">  <img src="https://github.com/Danvargast/BotiSur/blob/f508270d0c881bac2d65b0ecb6c0b8c265af262c/Avances/semana%2011/java-script.png" width="30">|                 |
+  |<img src="https://github.com/Danvargast/BotiSur/blob/7d915fe797034d3fb5e7c271d6ce60cd392837e9/Avances/semana%2011/HTML-5-Badge-Logo.png" width="50"> <img src="https://github.com/Danvargast/BotiSur/blob/5c2abb5d19d6814bc22e4b7a21eeb310302b2a02/Avances/semana%2011/css-3.png" width="40">  <img src="https://github.com/Danvargast/BotiSur/blob/f508270d0c881bac2d65b0ecb6c0b8c265af262c/Avances/semana%2011/java-script.png" width="30"> | <img src="[https://github.com/Danvargast/BotiSur/blob/f508270d0c881bac2d65b0ecb6c0b8c265af262c/Avances/semana%2011/java-script.png](https://github.com/Danvargast/BotiSur/blob/5e618d2e6cafb2497882093cf8748ff91a5a8b5d/Avances/semana%2011/python.png)" width="30">              |
 
 # Metodologia de Desarrollo :calendar: 
 El desarrollo seguirá la metodología ágil Scrum, organizando el trabajo en sprints semanales. Esta estrategia permitirá una entrega progresiva y flexible, asegurando mejoras continuas durante el desarrollo del sistema.
