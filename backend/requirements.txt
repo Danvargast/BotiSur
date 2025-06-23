@@ -1,0 +1,8 @@
+# requirements.txt
+# Lista de dependencias de Python para instalar con pip.
+
+fastapi
+uvicorn[standard]
+sqlalchemy
+psycopg2-binary
+python-dotenv
