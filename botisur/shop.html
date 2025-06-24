@@ -1,7 +1,6 @@
-
-<!-- shop.html -->
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,27 +9,108 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/custom.css">
-    <link rel="stylesheet" href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css)">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <style>
-        #carrito-panel { position: fixed; top: 0; right: -400px; width: 380px; height: 100%; background-color: white; box-shadow: -3px 0 8px rgba(0, 0, 0, 0.15); transition: right 0.3s ease-in-out; padding: 25px; overflow-y: auto; z-index: 1050; display: flex; flex-direction: column; }
-        #carrito-panel.abierto { right: 0; }
-        #carrito-toggle { position: fixed; top: 15px; right: 20px; background-color: #28a745; color: white; border: none; padding: 10px 15px; border-radius: 50px; cursor: pointer; z-index: 1051; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
-        #carrito-contador { background-color: #dc3545; border-radius: 50%; padding: 2px 6px; font-size: 0.8rem; vertical-align: top; margin-left: 4px; }
-        #cerrar-carrito { position: absolute; top: 15px; right: 20px; background: none; border: none; font-size: 1.8rem; cursor: pointer; color: #6c757d; }
-        #carrito-lista { flex-grow: 1; }
-        .producto-placeholder { text-align: center; padding: 60px 20px; color: #6c757d; font-size: 1.1rem; }
-        .card-img-top { height: 160px; object-fit: cover; background-color: #f8f9fa; }
+        .main-header .navbar {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        #auth-container {
+            margin-left: 20px;
+        }
+
+        #carrito-toggle {
+            position: fixed;
+            top: 85px;
+            right: 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 50px;
+            cursor: pointer;
+            z-index: 1051;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+            transition: transform 0.2s ease-in-out;
+        }
+
+        #carrito-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        #carrito-contador {
+            background-color: #dc3545;
+            border-radius: 50%;
+            padding: 2px 7px;
+            font-size: 0.8rem;
+            vertical-align: top;
+            margin-left: 5px;
+        }
+
+        #carrito-panel {
+            position: fixed;
+            top: 0;
+            right: -400px;
+            width: 380px;
+            height: 100%;
+            background-color: white;
+            box-shadow: -4px 0 10px rgba(0, 0, 0, 0.15);
+            transition: right 0.3s ease-in-out;
+            padding: 25px;
+            overflow-y: auto;
+            z-index: 1060;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #carrito-panel.abierto {
+            right: 0;
+        }
+
+        #cerrar-carrito {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #6c757d;
+            line-height: 1;
+        }
+
+        #cerrar-carrito:hover {
+            color: #343a40;
+        }
+
+        #carrito-lista {
+            flex-grow: 1;
+        }
+
+        .producto-placeholder {
+            text-align: center;
+            padding: 60px 20px;
+            color: #6c757d;
+            font-size: 1.1rem;
+        }
+
+        .card-img-top {
+            height: 180px;
+            object-fit: cover;
+            background-color: #f8f9fa;
+        }
     </style>
 </head>
+
 <body>
     <header class="main-header">
         <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav">
             <div class="container">
-                <div class="navbar-header">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu">
-                        <i class="fa fa-bars"></i>
-                    </button>
-                </div>
+                <a class="navbar-brand" href="index.html"><img src="images/logo.png" class="logo" alt=""></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu">
+                    <i class="fa fa-bars"></i>
+                </button>
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto">
                         <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
@@ -39,15 +119,19 @@
                         <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
                     </ul>
                 </div>
-                <div id="auth-container" class="login-box d-flex align-items-center ml-4">
-                    <div id="logged-out-view" style="display: none;"><a href="registro.html" class="btn btn-outline-primary mr-2">Registrarse</a><a href="login.html" class="btn btn-primary">Iniciar Sesión</a></div>
-                    <div id="logged-in-view" style="display: none;"><span id="user-greeting" class="mr-3 text-dark"></span><button id="logout-btn" class="btn btn-outline-danger">Cerrar Sesión</button></div>
+                <div id="auth-container" class="login-box d-flex align-items-center">
+                    <div id="logged-out-view" style="display: none;"><a href="registro.html"
+                            class="btn btn-outline-primary mr-2">Registrarse</a><a href="login.html"
+                            class="btn btn-primary">Iniciar Sesión</a></div>
+                    <div id="logged-in-view" style="display: none;"><span id="user-greeting"
+                            class="mr-3 text-dark"></span><button id="logout-btn" class="btn btn-outline-danger">Cerrar
+                            Sesión</button></div>
                 </div>
             </div>
         </nav>
     </header>
 
-    <div class="container mt-5 mb-3">
+    <div class="container mt-5 mb-4">
         <div class="title-all text-center">
             <h1>Tienda Botisur</h1>
             <p>Explora nuestra gran variedad de productos</p>
@@ -55,56 +139,97 @@
     </div>
 
     <div class="container">
-        <div id="productos-container" class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
-            <!-- Productos cargados dinámicamente -->
-        </div>
+        <div id="productos-container" class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4"></div>
     </div>
 
-    <!-- Footer completo añadido -->
     <footer>
-        <div class="footer-main">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-4 col-md-12 col-sm-12">
-                        <div class="footer-top-box">
-                            <h3>Horario de atención</h3>
-                            <ul class="list-time">
-                                <li>Lunes a Viernes: 08.00am a 05.00pm</li>
-                                <li>Sábado: 10.00am a 08.00pm</li>
-                                <li>Domingo: <span>Cerrado</span></li>
-                            </ul>
+        <footer>
+            <div class="footer-main">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4 col-md-12 col-sm-12">
+                            <div class="footer-top-box">
+                                <h3>Horario de atención</h3>
+                                <ul class="list-time">
+                                    <li>Lunes a Viernes: 08.00am a 05.00pm</li>
+                                    <li>Sábado: 10.00am a 08.00pm</li>
+                                    <li>Domingo: <span>Cerrado</span></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 col-sm-12">
+                            <div class="footer-top-box">
+                                <h3>Subscríbete</h3>
+                                <form class="newsletter-box">
+                                    <div class="form-group">
+                                        <input class="" type="email" name="Email" placeholder="Dirección de correo*" />
+                                        <i class="fa fa-envelope"></i>
+                                    </div>
+                                    <button class="btn hvr-hover" type="submit">Enviar</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 col-sm-12">
+                            <div class="footer-top-box">
+                                <h3>Redes sociales</h3>
+                                <p>Síguenos en nuestras redes sociales.</p>
+                                <ul>
+                                    <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                                    <li><a href="#"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 col-md-12 col-sm-12">
-                        <div class="footer-top-box">
-                            <h3>Subscríbete</h3>
-                            <form class="newsletter-box">
-                                <div class="form-group"><input class="" type="email" name="Email" placeholder="Dirección de correo*" /><i class="fa fa-envelope"></i></div>
-                                <button class="btn hvr-hover" type="submit">Enviar</button>
-                            </form>
+                    <hr>
+                    <div class="row">
+                        <div class="col-lg-4 col-md-12 col-sm-12">
+                            <div class="footer-widget">
+                                <h4>Acerca de Botisur</h4>
+                                <p>En Botisur, nos apasiona ofrecerte la mejor selección de licores y bebidas para tus
+                                    celebraciones y momentos especiales.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4 col-md-12 col-sm-12">
-                        <div class="footer-top-box">
-                            <h3>Redes sociales</h3>
-                            <p>Síguenos en nuestras redes sociales.</p>
-                            <ul>
-                                <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
-                            </ul>
+                        <div class="col-lg-4 col-md-12 col-sm-12">
+                            <div class="footer-link">
+                                <h4>Información</h4>
+                                <ul>
+                                    <li><a href="#">Términos y condiciones</a></li>
+                                    <li><a href="#">Política de privacidad</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-12 col-sm-12">
+                            <div class="footer-link-contact">
+                                <h4>Contáctanos</h4>
+                                <ul>
+                                    <li>
+                                        <p><i class="fas fa-map-marker-alt"></i>Dirección: Av. Los Robles 1234,
+                                            <br>Puerto Montt, Región de los Lagos </p>
+                                    </li>
+                                    <li>
+                                        <p><i class="fas fa-phone-square"></i>Teléfono: <a href="tel:+56912345678">+56 9
+                                                1234 5678</a></p>
+                                    </li>
+                                    <li>
+                                        <p><i class="fas fa-envelope"></i>Email: <a
+                                                href="mailto:contacto@botisur.cl">contacto@botisur.cl</a></p>
+                                    </li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <hr>
             </div>
+        </footer>
+        <div class="footer-copyright">
+            <p class="footer-company">Todos los derechos reservados. &copy; 2025 <a href="#">Botisur</a></p>
         </div>
     </footer>
     <div class="footer-copyright">
-        <p class="footer-company">Todos los derechos reservados. &copy; 2025 <a href="#">Botisur</a> </p>
+        <p class="footer-company">Todos los derechos reservados. &copy; 2025 <a href="#">Botisur</a></p>
     </div>
 
-    <!-- Carrito y otros elementos -->
     <button id="carrito-toggle">🛒<span id="carrito-contador">0</span></button>
     <div id="carrito-panel">
         <button id="cerrar-carrito">&times;</button>
@@ -114,13 +239,41 @@
         <div class="mt-auto">
             <hr>
             <h5 class="d-flex justify-content-between"><strong>Total:</strong> <span id="carrito-total">$0</span></h5>
-            <button id="pagar-btn" class="btn btn-success btn-block mt-3">Pagar</button>
+            <button id="pagar-btn" class="btn btn-success btn-block mt-3">Ir a Pagar</button>
+        </div>
+    </div>
+
+    <div class="modal fade" id="confirmacionPagoModal" tabindex="-1" aria-labelledby="confirmacionPagoModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmacionPagoModalLabel">Confirmar Compra</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Por favor, revisa tu pedido antes de confirmar:</p>
+                    <ul id="resumen-pedido-lista" class="list-group mb-3"></ul>
+                    <h5 class="text-right">Total: <span id="resumen-pedido-total"></span></h5>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="confirmar-pago-btn">
+                        <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"
+                            style="display: none;"></span>
+                        Confirmar Compra
+                    </button>
+                </div>
+            </div>
         </div>
     </div>
 
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/auth.js"></script>
-    <script src="js/shop-logic.js"></script> <!-- Lógica movida a un archivo externo -->
+    <script src="js/shop-logic.js"></script>
 </body>
+
 </html>

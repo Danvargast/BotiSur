@@ -10,16 +10,10 @@
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/custom.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-    <style>
-        .card-img-top-custom {
-            height: 200px;
-            object-fit: cover;
-        }
-    </style>
 </head>
 
 <body>
-    <!-- Start Main Top -->
+    <!-- Header Corregido -->
     <header class="main-header">
         <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav">
             <div class="container">
@@ -27,7 +21,6 @@
                     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu">
                         <i class="fa fa-bars"></i>
                     </button>
-                    <!-- <a class="navbar-brand" href="index.html"><img src="images/logo.png" class="logo" alt=""></a> -->
                 </div>
                 <div class="collapse navbar-collapse" id="navbar-menu">
                     <ul class="nav navbar-nav ml-auto">
@@ -37,22 +30,15 @@
                         <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
                     </ul>
                 </div>
+                <!-- Contenedor añadido para los botones de autenticación -->
                 <div id="auth-container" class="login-box d-flex align-items-center ml-4">
-                    <div id="logged-out-view" style="display: none;">
-                        <a href="registro.html" class="btn btn-outline-primary mr-2">Registrarse</a>
-                        <a href="login.html" class="btn btn-primary">Iniciar Sesión</a>
-                    </div>
-                    <div id="logged-in-view" style="display: none;">
-                        <span id="user-greeting" class="mr-3 text-dark"></span>
-                        <button id="logout-btn" class="btn btn-outline-danger">Cerrar Sesión</button>
-                    </div>
+                    <!-- El script auth.js llenará este espacio -->
                 </div>
             </div>
         </nav>
     </header>
-    <!-- End Main Top -->
 
-    <!-- Start Slider -->
+    <!-- Slider Original -->
     <div id="slides-shop" class="cover-slides">
         <ul class="slides-container">
             <li class="text-center">
@@ -66,48 +52,58 @@
         </ul>
         <div class="slides-navigation"><a href="#" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a><a href="#" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a></div>
     </div>
-    <!-- End Slider -->
-    
-    <!-- Ofertas de la Semana (Dinámico) -->
+
+    <!-- Ofertas de la Semana (Contenido Estático Original con Carrusel) -->
     <section class="products-box">
         <div class="container">
             <div class="title-all text-center">
                 <h1>🔥 Ofertas de la Semana 🔥</h1>
             </div>
-            <!-- Contenedor para las ofertas dinámicas -->
-            <div id="ofertas-container" class="row">
-                <!-- El carrusel se llenará dinámicamente -->
+            <div id="ofertasCarousel" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row g-4 justify-content-center">
+                            <div class="col-md-6"><div class="card h-100"><img class="card-img-top" src="images/packcerveza.jpg" alt="Cerveza corona" style="height: 250px; object-fit: cover;"><div class="card-body text-center"><h5 class="fw-bolder">Pack cervezas corona</h5><p><del class="text-muted">$4.000</del> <strong>$2.200</strong></p></div><div class="card-footer p-4 pt-0 border-top-0 bg-transparent"><div class="text-center"><a href="shop.html" class="btn btn-outline-dark mt-auto">Ver en tienda</a></div></div></div></div>
+                            <div class="col-md-6"><div class="card h-100"><img class="card-img-top" src="images/vinotintoreserva.jpg" alt="Vino Tinto" style="height: 250px; object-fit: cover;"><div class="card-body text-center"><h5 class="fw-bolder">Vino Tinto Reserva</h5><p><del class="text-muted">$15.000</del> <strong>$10.000</strong></p></div><div class="card-footer p-4 pt-0 border-top-0 bg-transparent"><div class="text-center"><a href="shop.html" class="btn btn-outline-dark mt-auto">Ver en tienda</a></div></div></div></div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Productos más vendidos (Dinámico) -->
+    <!-- Productos más vendidos (Contenido Estático Original SIN los botones de filtro) -->
     <div class="products-box">
         <div class="container">
-            <div class="title-all text-center">
-                <h1>Nuestros productos más vendidos</h1>
-                <p>Explora nuestra selección de cervezas, vinos y refrescos para cada ocasión.</p>
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="title-all text-center">
+                        <h1>Nuestros productos más vendidos</h1>
+                        <p>Explora nuestra selección de cervezas, vinos y refrescos para cada ocasión. ¡Calidad y sabor al mejor precio!</p>
+                    </div>
+                </div>
             </div>
-            <!-- Contenedor para los productos destacados -->
-            <div id="destacados-container" class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
-                <!-- Los productos se cargarán aquí -->
+            <div class="row special-list">
+                <div class="col-lg-3 col-md-6 special-grid best-seller"><div class="products-single fix"><div class="box-img-hover"><div class="type-lb"><p class="sale">Venta</p></div><img src="images/torobayo.jpg" class="img-fluid" alt="Image"><div class="mask-icon"><ul><li><a href="shop.html" data-toggle="tooltip" data-placement="right" title="Ver"><i class="fas fa-eye"></i></a></li></ul><a class="cart" href="shop.html">Añadir al Carrito</a></div></div><div class="why-text"><h4>Cerveza Torobayo</h4><h5> $8.500</h5></div></div></div>
+                <div class="col-lg-3 col-md-6 special-grid top-featured"><div class="products-single fix"><div class="box-img-hover"><div class="type-lb"><p class="new">Nuevo</p></div><img src="images/cervezacristal.jpg" class="img-fluid" alt="Image"><div class="mask-icon"><ul><li><a href="shop.html" data-toggle="tooltip" data-placement="right" title="Ver"><i class="fas fa-eye"></i></a></li></ul><a class="cart" href="shop.html">Añadir al Carrito</a></div></div><div class="why-text"><h4>Cerveza Cristal</h4><h5> $2.300</h5></div></div></div>
+                <div class="col-lg-3 col-md-6 special-grid best-seller"><div class="products-single fix"><div class="box-img-hover"><div class="type-lb"><p class="sale">Venta</p></div><img src="images/bebida.jpg" class="img-fluid" alt="Image"><div class="mask-icon"><ul><li><a href="shop.html" data-toggle="tooltip" data-placement="right" title="Ver"><i class="fas fa-eye"></i></a></li></ul><a class="cart" href="shop.html">Añadir al Carrito</a></div></div><div class="why-text"><h4>Bebida Coca-Cola</h4><h5> $2.000</h5></div></div></div>
+                <div class="col-lg-3 col-md-6 special-grid top-featured"><div class="products-single fix"><div class="box-img-hover"><div class="type-lb"><p class="new">Nuevo</p></div><img src="images/vino.jpg" class="img-fluid" alt="Image"><div class="mask-icon"><ul><li><a href="shop.html" data-toggle="tooltip" data-placement="right" title="Ver"><i class="fas fa-eye"></i></a></li></ul><a class="cart" href="shop.html">Añadir al Carrito</a></div></div><div class="why-text"><h4>Vino Cabernet Sauvignon</h4><h5> $12.000</h5></div></div></div>
             </div>
         </div>
     </div>
 
-    <!-- Start Footer  -->
+    <!-- Footer Estandarizado -->
     <footer>
-        <div class="footer-main"><div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-12 col-sm-12"><div class="footer-top-box"><h3>Horario de atención</h3><ul class="list-time"><li>Lunes a Viernes: 08.00am a 05.00pm</li><li>Sábado: 10.00am a 08.00pm</li><li>Domingo: <span>Cerrado</span></li></ul></div></div>
-                <div class="col-lg-4 col-md-12 col-sm-12"><div class="footer-top-box"><h3>Subscríbete</h3><form class="newsletter-box"><div class="form-group"><input class="" type="email" name="Email" placeholder="Dirección de correo*" /><i class="fa fa-envelope"></i></div><button class="btn hvr-hover" type="submit">Enviar</button></form></div></div>
-                <div class="col-lg-4 col-md-12 col-sm-12"><div class="footer-top-box"><h3>Redes sociales</h3><p>Síguenos en nuestras redes sociales.</p><ul><li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li><li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li><li><a href="#"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li></ul></div></div>
-            </div><hr>
-            <div class="row">
-                <div class="col-lg-4 col-md-12 col-sm-12"><div class="footer-widget"><h4>Acerca de Botisur</h4><p>En Botisur, nos apasiona ofrecerte la mejor selección de licores y bebidas para tus celebraciones y momentos especiales.</p></div></div>
-                <div class="col-lg-4 col-md-12 col-sm-12"><div class="footer-link"><h4>Información</h4><ul><li><a href="#">Términos y condiciones</a></li><li><a href="#">Política de privacidad</a></li></ul></div></div>
-                <div class="col-lg-4 col-md-12 col-sm-12"><div class="footer-link-contact"><h4>Contáctanos</h4><ul><li><p><i class="fas fa-map-marker-alt"></i>Dirección: Av. Los Robles 1234, <br>Puerto Montt, Región de los Lagos </p></li><li><p><i class="fas fa-phone-square"></i>Teléfono: <a href="tel:+56912345678">+56 9 1234 5678</a></p></li><li><p><i class="fas fa-envelope"></i>Email: <a href="mailto:contacto@botisur.cl">contacto@botisur.cl</a></p></li></ul></div></div>
-            </div>
+        <div class="footer-main"><div class="container"><div class="row">
+            <div class="col-lg-4 col-md-12 col-sm-12"><div class="footer-top-box"><h3>Horario de atención</h3><ul class="list-time"><li>Lunes a Viernes: 08.00am a 05.00pm</li><li>Sábado: 10.00am a 08.00pm</li><li>Domingo: <span>Cerrado</span></li></ul></div></div>
+            <div class="col-lg-4 col-md-12 col-sm-12"><div class="footer-top-box"><h3>Subscríbete</h3><form class="newsletter-box"><div class="form-group"><input class="" type="email" name="Email" placeholder="Dirección de correo*" /><i class="fa fa-envelope"></i></div><button class="btn hvr-hover" type="submit">Enviar</button></form></div></div>
+            <div class="col-lg-4 col-md-12 col-sm-12"><div class="footer-top-box"><h3>Redes sociales</h3><p>Síguenos en nuestras redes sociales.</p><ul><li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li><li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li><li><a href="#"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li></ul></div></div>
+        </div><hr>
+        <div class="row">
+            <div class="col-lg-4 col-md-12 col-sm-12"><div class="footer-widget"><h4>Acerca de Botisur</h4><p>En Botisur, nos apasiona ofrecerte la mejor selección de licores y bebidas para tus celebraciones y momentos especiales.</p></div></div>
+            <div class="col-lg-4 col-md-12 col-sm-12"><div class="footer-link"><h4>Información</h4><ul><li><a href="#">Términos y condiciones</a></li><li><a href="#">Política de privacidad</a></li></ul></div></div>
+            <div class="col-lg-4 col-md-12 col-sm-12"><div class="footer-link-contact"><h4>Contáctanos</h4><ul><li><p><i class="fas fa-map-marker-alt"></i>Dirección: Av. Los Robles 1234, <br>Puerto Montt, Región de los Lagos </p></li><li><p><i class="fas fa-phone-square"></i>Teléfono: <a href="tel:+56912345678">+56 9 1234 5678</a></p></li><li><p><i class="fas fa-envelope"></i>Email: <a href="mailto:contacto@botisur.cl">contacto@botisur.cl</a></p></li></ul></div></div>
+        </div>
         </div></div>
     </footer>
     <div class="footer-copyright"><p class="footer-company">Todos los derechos reservados. &copy; 2025 <a href="#">Botisur</a></p></div>
@@ -118,82 +114,10 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/jquery.superslides.min.js"></script>
     <script src="js/bootsnav.js."></script>
+    <script src="js/images-loded.min.js"></script>
+    <script src="js/isotope.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
     <script src="js/custom.js"></script>
-    <script src="js/config.js"></script>
     <script src="js/auth.js"></script>
-    <script>
-        // Función para crear la tarjeta de un producto
-        function createProductCard(producto, isOffer = false) {
-            const imageUrl = producto.imagen_url || `https://placehold.co/400x300/e8e8e8/666?text=${encodeURIComponent(producto.nombre)}`;
-            const priceHtml = isOffer 
-                ? `<del class="text-muted">$${(parseFloat(producto.precio) * 1.2).toLocaleString('es-CL')}</del> <strong>$${parseFloat(producto.precio).toLocaleString('es-CL')}</strong>`
-                : `$${parseFloat(producto.precio).toLocaleString('es-CL')}`;
-
-            return `
-                <div class="col-sm-6 col-md-6 col-lg-4 col-xl-4">
-                    <div class="products-single fix">
-                        <div class="box-img-hover">
-                            ${isOffer ? '<div class="type-lb"><p class="sale">Oferta</p></div>' : ''}
-                            <img src="${imageUrl}" class="img-fluid" alt="${producto.nombre}" style="height: 200px; object-fit: cover;" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e8e8e8/666?text=Imagen no disponible';"/>
-                            <div class="mask-icon">
-                                <ul>
-                                    <li><a href="shop.html" data-toggle="tooltip" data-placement="right" title="Ver en Tienda"><i class="fas fa-eye"></i></a></li>
-                                </ul>
-                                <a class="cart" href="shop.html">Ir a la Tienda</a>
-                            </div>
-                        </div>
-                        <div class="why-text">
-                            <h4>${producto.nombre}</h4>
-                            <h5>${priceHtml}</h5>
-                        </div>
-                    </div>
-                </div>`;
-        }
-        
-        // Función para cargar los productos
-        async function loadFeaturedProducts() {
-            const ofertasContainer = document.getElementById('ofertas-container');
-            const destacadosContainer = document.getElementById('destacados-container');
-            
-            ofertasContainer.innerHTML = '<div class="col-12 text-center"><div class="spinner-border text-primary" role="status"></div></div>';
-            destacadosContainer.innerHTML = '<div class="col-12 text-center"><div class="spinner-border text-primary" role="status"></div></div>';
-
-            try {
-                const response = await fetch(`${API_URL}/productos/?limit=7`); // Pedimos 7 productos en total
-                if (!response.ok) throw new Error('Error de conexión');
-                const productos = await response.json();
-                
-                // Limpiar contenedores
-                ofertasContainer.innerHTML = '';
-                destacadosContainer.innerHTML = '';
-
-                if (productos.length === 0) {
-                     ofertasContainer.innerHTML = '<div class="col-12 text-center text-muted"><p>No hay ofertas disponibles.</p></div>';
-                     destacadosContainer.innerHTML = '<div class="col-12 text-center text-muted"><p>No hay productos para mostrar.</p></div>';
-                     return;
-                }
-
-                // Los primeros 3 para ofertas
-                const ofertas = productos.slice(0, 3);
-                ofertas.forEach(producto => {
-                    ofertasContainer.innerHTML += createProductCard(producto, true);
-                });
-
-                // Los siguientes 4 para destacados
-                const destacados = productos.slice(3, 7);
-                destacados.forEach(producto => {
-                    destacadosContainer.innerHTML += createProductCard(producto, false);
-                });
-
-            } catch (error) {
-                 ofertasContainer.innerHTML = `<div class="col-12 text-center text-danger"><p>No se pudieron cargar las ofertas.</p></div>`;
-                 destacadosContainer.innerHTML = `<div class="col-12 text-center text-danger"><p>No se pudieron cargar los productos.</p></div>`;
-            }
-        }
-        
-        document.addEventListener('DOMContentLoaded', () => {
-            loadFeaturedProducts();
-        });
-    </script>
 </body>
 </html>

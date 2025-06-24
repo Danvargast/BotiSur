@@ -1,12 +1,6 @@
-# schemas.py
-# Este archivo define la "forma" de los datos que entran y salen de tu API.
-# Esta es la versión corregida y completa.
-
 from pydantic import BaseModel, Field, EmailStr
 from typing import Optional, List
 from datetime import date
-
-# --- Esquemas para Autenticación y Usuarios ---
 
 class Token(BaseModel):
     access_token: str
@@ -22,7 +16,6 @@ class UserBase(BaseModel):
     apellido: str
     telefono: Optional[str] = None
 
-# ESTA ES LA CLASE QUE FALTABA Y CAUSABA EL ERROR
 class UserCreate(UserBase):
     password: str
 
@@ -32,7 +25,6 @@ class User(UserBase):
     class Config:
         from_attributes = True
 
-# --- Esquemas para Recetas ---
 class Ingrediente(BaseModel):
     nombre: str
     medida: Optional[str] = None
@@ -44,7 +36,6 @@ class Receta(BaseModel):
     imagen_url: str
     ingredientes: List[Ingrediente]
 
-# --- Esquemas para Venta ---
 class DetalleVentaCreate(BaseModel):
     producto_id: int
     cantidad: int = Field(..., gt=0)
@@ -68,7 +59,6 @@ class Venta(BaseModel):
     class Config:
         from_attributes = True
 
-# --- Esquemas para Producto, Categoría, Proveedor ---
 class ProveedorBase(BaseModel):
     nombre: str
     telefono: Optional[str] = None
@@ -96,7 +86,7 @@ class ProductoBase(BaseModel):
     nombre: str
     precio: float
     stock: int
-    imagen_url: Optional[str] = None # Incluye el campo de la imagen
+    imagen_url: Optional[str] = None
     categoria_id: Optional[int] = None
     proveedor_id: Optional[int] = None
 

@@ -1,6 +1,4 @@
-
 // js/shop-logic.js
-// (NUEVO ARCHIVO) Para mantener shop.html más limpio.
 
 const API_URL = 'http://127.0.0.1:8000';
 
@@ -75,7 +73,9 @@ const actualizarVistaCarrito = () => {
 
     if (carrito.length === 0) {
         listaEl.innerHTML = '<li class="list-group-item text-center text-muted">Tu carrito está vacío.</li>';
+        document.getElementById('pagar-btn').disabled = true;
     } else {
+        document.getElementById('pagar-btn').disabled = false;
         carrito.forEach(item => {
             const itemTotal = item.precio * item.cantidad;
             totalGeneral += itemTotal;
@@ -94,33 +94,66 @@ const actualizarVistaCarrito = () => {
     contadorEl.innerText = totalItems;
 };
 
-// --- LÓGICA DE PAGO ---
-async function handlePagar() {
+// --- LÓGICA DE PAGO MEJORADA ---
+function handlePagarClick() {
     const token = localStorage.getItem('accessToken');
-    const carrito = getCarrito();
     if (!token) {
         alert('Debes iniciar sesión para poder pagar.');
         window.location.href = 'login.html';
         return;
     }
+    
+    const carrito = getCarrito();
     if (carrito.length === 0) {
         alert('Tu carrito está vacío.');
         return;
     }
+
+    const resumenLista = document.getElementById('resumen-pedido-lista');
+    const resumenTotal = document.getElementById('resumen-pedido-total');
+    resumenLista.innerHTML = '';
+    let total = 0;
+
+    carrito.forEach(item => {
+        const li = document.createElement('li');
+        li.className = 'list-group-item d-flex justify-content-between lh-condensed';
+        li.innerHTML = `
+            <div>
+                <h6 class="my-0">${item.nombre}</h6>
+                <small class="text-muted">Cantidad: ${item.cantidad}</small>
+            </div>
+            <span class="text-muted">$${(item.precio * item.cantidad).toLocaleString('es-CL')}</span>`;
+        resumenLista.appendChild(li);
+        total += item.precio * item.cantidad;
+    });
+
+    resumenTotal.innerText = `$${total.toLocaleString('es-CL')}`;
+    $('#confirmacionPagoModal').modal('show');
+}
+
+async function procesarVentaSimulada() {
+    const token = localStorage.getItem('accessToken');
+    const carrito = getCarrito();
     const detalles = carrito.map(item => ({ producto_id: item.id_producto, cantidad: item.cantidad }));
+    const btnConfirmar = document.getElementById('confirmar-pago-btn');
+    const spinner = btnConfirmar.querySelector('.spinner-border');
+
+    btnConfirmar.disabled = true;
+    spinner.style.display = 'inline-block';
+
     try {
-        const response = await fetch(`${API_URL}/ventas/`, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
-            body: JSON.stringify({ detalles })
-        });
-        const data = await response.json();
-        if (!response.ok) throw new Error(data.detail || 'Error al procesar la venta.');
+        await new Promise(resolve => setTimeout(resolve, 1500)); 
+        console.log("Enviando venta (simulado):", { detalles });
+        
         alert('¡Compra realizada con éxito!');
         saveCarrito([]);
         cerrarCarrito();
+        $('#confirmacionPagoModal').modal('hide');
     } catch (error) {
-        alert(`Error: ${error.message}`);
+        alert(`Error simulado: ${error.message}`);
+    } finally {
+        btnConfirmar.disabled = false;
+        spinner.style.display = 'none';
     }
 }
 
@@ -130,12 +163,22 @@ const cerrarCarrito = () => document.getElementById('carrito-panel').classList.r
 
 // --- INICIALIZACIÓN ---
 document.addEventListener('DOMContentLoaded', () => {
-    // Solo ejecutar lógica específica de la tienda si estamos en shop.html
+    // Solo ejecutar lógica de la tienda si estamos en la página correcta
     if (document.getElementById('productos-container')) {
         fetchYMostrarProductos();
         actualizarVistaCarrito();
-        document.getElementById('pagar-btn').addEventListener('click', handlePagar);
+
+        // **AQUÍ SE ASIGNAN LOS EVENTOS**
+        // Si esta sección no se ejecuta, los botones no funcionarán.
+        document.getElementById('pagar-btn').addEventListener('click', handlePagarClick);
         document.getElementById('carrito-toggle').addEventListener('click', abrirCarrito);
-        document.getElementById('cerrar-carrito').addEventListener('click', cerrarCarrito);
+        document.getElementById('cerrar-carrito').addEventListener('click', cerrarCarrito); // <-- Este es el evento clave para el botón "x"
+        document.getElementById('confirmar-pago-btn').addEventListener('click', procesarVentaSimulada);
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === "Escape" && document.getElementById('carrito-panel').classList.contains('abierto')) {
+                cerrarCarrito();
+            }
+        });
     }
 });
