@@ -4,8 +4,7 @@
 
 import os
 from sqlalchemy import create_engine
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.orm import sessionmaker, declarative_base
 from dotenv import load_dotenv
 
 # Carga las variables de entorno desde el archivo .env
@@ -15,11 +14,13 @@ load_dotenv()
 # Debes crear un archivo .env en la raíz de tu proyecto con tu URL de conexión de Supabase.
 # Ejemplo de contenido para el archivo .env:
 # DATABASE_URL="postgresql://postgres:[TU_CONTRASEÑA]@[ID_PROYECTO].db.supabase.co:5432/postgres"
+# SECRET_KEY="[TU_CLAVE_SECRETA_GENERADA_CON_OPENSSL]"
 
 DATABASE_URL = os.getenv("DATABASE_URL")
+SECRET_KEY = os.getenv("SECRET_KEY")
 
-if not DATABASE_URL:
-    raise Exception("No se encontró la variable de entorno DATABASE_URL. Asegúrate de crear un archivo .env.")
+if not DATABASE_URL or not SECRET_KEY:
+    raise Exception("Asegúrate de que las variables DATABASE_URL y SECRET_KEY estén en el archivo .env.")
 
 # Crea el motor de SQLAlchemy
 engine = create_engine(DATABASE_URL)
@@ -29,3 +30,11 @@ SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 # Base para los modelos ORM
 Base = declarative_base()
+
+# Dependencia de la base de datos
+def get_db():
+    db = SessionLocal()
+    try:
+        yield db
+    finally:
+        db.close()

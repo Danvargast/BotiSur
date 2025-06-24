@@ -1,69 +1,73 @@
 
 # crud.py
-# Contiene las funciones para interactuar con la base de datos (Operaciones CRUD).
+# (MODIFICADO Y CORREGIDO)
+# Ahora usa 'utils.py' para el hash.
 
 from sqlalchemy.orm import Session
 from datetime import date
+
+# Importaciones locales
 import models
 import schemas
+import utils  # <-- Importa el nuevo archivo de utilidades
+
+# --- CRUD para Usuario ---
+def get_user(db: Session, user_id: int):
+    return db.query(models.User).filter(models.User.id == user_id).first()
+
+def get_user_by_email(db: Session, email: str):
+    return db.query(models.User).filter(models.User.email == email).first()
+
+def create_user(db: Session, user: schemas.UserCreate):
+    # Usa la función de hash desde utils.py
+    hashed_password = utils.get_password_hash(user.password)
+    db_user = models.User(
+        email=user.email,
+        hashed_password=hashed_password,
+        nombre=user.nombre,
+        apellido=user.apellido,
+        telefono=user.telefono
+    )
+    db.add(db_user)
+    db.commit()
+    db.refresh(db_user)
+    return db_user
 
 # --- CRUD para Venta ---
-
-def create_venta(db: Session, venta: schemas.VentaCreate):
-    """
-    Procesa una nueva venta, valida el stock y crea los registros en la BD.
-    Esta operación es atómica: o se completa entera o no se hace nada.
-    """
-    # 1. Validar stock de todos los productos antes de cualquier operación
+def create_venta(db: Session, venta: schemas.VentaCreate, usuario_id: int):
     for detalle in venta.detalles:
         producto_db = get_producto(db, detalle.producto_id)
-        if not producto_db:
-            raise ValueError(f"Producto con ID {detalle.producto_id} no existe.")
-        if producto_db.stock < detalle.cantidad:
-            raise ValueError(f"Stock insuficiente para '{producto_db.nombre}'. "
-                             f"Disponible: {producto_db.stock}, Solicitado: {detalle.cantidad}.")
-
-    # 2. Crear el registro principal de la venta
-    db_venta = models.Venta(
-        fecha=date.today(),
-        cliente_id=venta.cliente_id,
-        empleado_id=venta.empleado_id
-    )
+        if not producto_db or producto_db.stock < detalle.cantidad:
+            raise ValueError("Stock insuficiente o producto no existe.")
+            
+    db_venta = models.Venta(fecha=date.today(), usuario_id=usuario_id)
     db.add(db_venta)
-    db.flush() # Asigna un ID a db_venta sin hacer commit todavía
-
-    # 3. Crear detalles y actualizar stock
+    db.flush()
+    
     total_venta = 0
     for detalle in venta.detalles:
-        producto_db = get_producto(db, detalle.producto_id) # Volver a obtener para bloquear la fila
-        
-        # Descontar stock
+        producto_db = get_producto(db, detalle.producto_id)
         producto_db.stock -= detalle.cantidad
-        
-        # Crear el registro del detalle de la venta
         db_detalle = models.DetalleVenta(
             venta_id=db_venta.id_venta,
             producto_id=detalle.producto_id,
             cantidad=detalle.cantidad,
-            precio_unitario=producto_db.precio # Precio al momento de la venta
+            precio_unitario=producto_db.precio
         )
         db.add(db_detalle)
         total_venta += detalle.cantidad * producto_db.precio
-
-    # Opcional: guardar el total en la venta
+        
     db_venta.total = total_venta
-    
-    # 4. Confirmar todos los cambios en la base de datos
     db.commit()
-    db.refresh(db_venta) # Refrescar para obtener los detalles cargados
-    
+    db.refresh(db_venta)
     return db_venta
 
+# --- Resto de funciones CRUD sin cambios ---
 def get_ventas(db: Session, skip: int = 0, limit: int = 100):
-    """Obtiene un historial de ventas."""
     return db.query(models.Venta).order_by(models.Venta.id_venta.desc()).offset(skip).limit(limit).all()
 
-# --- CRUD para Producto ---
+def get_ventas_by_user(db: Session, usuario_id: int):
+    return db.query(models.Venta).filter(models.Venta.usuario_id == usuario_id).order_by(models.Venta.id_venta.desc()).all()
 
 def get_producto(db: Session, producto_id: int):
     return db.query(models.Producto).filter(models.Producto.id_producto == producto_id).first()
@@ -87,16 +91,14 @@ def update_producto(db: Session, producto_id: int, producto_update: schemas.Prod
         db.commit()
         db.refresh(db_producto)
     return db_producto
-
+    
 def delete_producto(db: Session, producto_id: int):
     db_producto = get_producto(db, producto_id)
     if db_producto:
         db.delete(db_producto)
         db.commit()
     return db_producto
-
-# --- CRUD para Categoria ---
-
+    
 def get_categorias(db: Session, skip: int = 0, limit: int = 100):
     return db.query(models.Categoria).offset(skip).limit(limit).all()
 
@@ -107,28 +109,12 @@ def create_categoria(db: Session, categoria: schemas.CategoriaCreate):
     db.refresh(db_categoria)
     return db_categoria
 
-# --- CRUD para Proveedor ---
-
 def get_proveedores(db: Session, skip: int = 0, limit: int = 100):
-    """Obtiene todos los proveedores."""
     return db.query(models.Proveedor).offset(skip).limit(limit).all()
 
 def create_proveedor(db: Session, proveedor: schemas.ProveedorCreate):
-    """Crea un nuevo proveedor."""
     db_proveedor = models.Proveedor(**proveedor.model_dump())
     db.add(db_proveedor)
     db.commit()
     db.refresh(db_proveedor)
     return db_proveedor
-
-# --- CRUD para Cliente ---
-
-def get_clientes(db: Session, skip: int = 0, limit: int = 100):
-    return db.query(models.Cliente).offset(skip).limit(limit).all()
-
-def create_cliente(db: Session, cliente: schemas.ClienteCreate):
-    db_cliente = models.Cliente(**cliente.model_dump())
-    db.add(db_cliente)
-    db.commit()
-    db.refresh(db_cliente)
-    return db_cliente

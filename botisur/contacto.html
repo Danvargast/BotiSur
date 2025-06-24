@@ -1,6 +1,7 @@
+
+<!-- contacto.html -->
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,22 +10,29 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/custom.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css)">
 </head>
-
 <body>
-    <!-- Navbar -->
+    <!-- Header estandarizado -->
     <header class="main-header">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ml-auto">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav">
+            <div class="container">
+                <div class="navbar-header">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu">
+                        <i class="fa fa-bars"></i>
+                    </button>
+                </div>
+                <div class="collapse navbar-collapse" id="navbar-menu">
+                    <ul class="nav navbar-nav ml-auto">
                         <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
                         <li class="nav-item"><a class="nav-link" href="shop.html">Tienda</a></li>
+                        <li class="nav-item"><a class="nav-link" href="recetas.html">Recetas</a></li>
                         <li class="nav-item active"><a class="nav-link" href="contacto.html">Contacto</a></li>
                     </ul>
+                </div>
+                <div id="auth-container" class="login-box d-flex align-items-center ml-4">
+                    <div id="logged-out-view" style="display: none;"><a href="registro.html" class="btn btn-outline-primary mr-2">Registrarse</a><a href="login.html" class="btn btn-primary">Iniciar Sesión</a></div>
+                    <div id="logged-in-view" style="display: none;"><span id="user-greeting" class="mr-3 text-dark"></span><button id="logout-btn" class="btn btn-outline-danger">Cerrar Sesión</button></div>
                 </div>
             </div>
         </nav>
@@ -36,51 +44,34 @@
             <div class="col-md-6">
                 <h2 class="text-center mb-4">Contáctanos</h2>
                 <form action="#" method="POST">
-                    <div class="form-group">
-                        <label for="nombre">Nombre</label>
-                        <input type="text" class="form-control" id="nombre" name="nombre" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="correo">Correo electrónico</label>
-                        <input type="email" class="form-control" id="correo" name="correo" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="mensaje">Mensaje</label>
-                        <textarea class="form-control" id="mensaje" name="mensaje" rows="5" maxlength="260" required></textarea>
-                    </div>
+                    <div class="form-group"><label for="nombre">Nombre</label><input type="text" class="form-control" id="nombre" name="nombre" required></div>
+                    <div class="form-group"><label for="correo">Correo electrónico</label><input type="email" class="form-control" id="correo" name="correo" required></div>
+                    <div class="form-group"><label for="mensaje">Mensaje</label><textarea class="form-control" id="mensaje" name="mensaje" rows="5" maxlength="260" required></textarea></div>
                     <button type="submit" class="btn btn-primary btn-block">Enviar</button>
                 </form>
             </div>
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="footer-main bg-dark text-white mt-5 py-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h4>Horario</h4>
-                    <p>Lunes a Viernes: 08:00 - 17:00<br>Sábado: 10:00 - 20:00<br>Domingo: Cerrado</p>
+    <!-- Footer completo añadido -->
+    <footer>
+        <div class="footer-main">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-12 col-sm-12"><div class="footer-top-box"><h3>Horario de atención</h3><ul class="list-time"><li>Lunes a Viernes: 08.00am a 05.00pm</li><li>Sábado: 10.00am a 08.00pm</li><li>Domingo: <span>Cerrado</span></li></ul></div></div>
+                    <div class="col-lg-4 col-md-12 col-sm-12"><div class="footer-top-box"><h3>Subscríbete</h3><form class="newsletter-box"><div class="form-group"><input class="" type="email" name="Email" placeholder="Dirección de correo*" /><i class="fa fa-envelope"></i></div><button class="btn hvr-hover" type="submit">Enviar</button></form></div></div>
+                    <div class="col-lg-4 col-md-12 col-sm-12"><div class="footer-top-box"><h3>Redes sociales</h3><p>Síguenos en nuestras redes sociales.</p><ul><li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li><li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li><li><a href="#"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li></ul></div></div>
                 </div>
-                <div class="col-md-4">
-                    <h4>Contáctanos</h4>
-                    <p><i class="fas fa-phone"></i> +56 9 1234 5678<br>
-                        <i class="fas fa-envelope"></i> contacto@botisur.cl</p>
-                </div>
-                <div class="col-md-4">
-                    <h4>Redes Sociales</h4>
-                    <p>
-                        <a href="#" class="text-white mr-2"><i class="fab fa-facebook"></i></a>
-                        <a href="#" class="text-white mr-2"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="text-white"><i class="fab fa-whatsapp"></i></a>
-                    </p>
-                </div>
+                <hr>
             </div>
         </div>
     </footer>
+    <div class="footer-copyright">
+        <p class="footer-company">Todos los derechos reservados. &copy; 2025 <a href="#">Botisur</a> </p>
+    </div>
 
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/auth.js"></script>
 </body>
-
 </html>

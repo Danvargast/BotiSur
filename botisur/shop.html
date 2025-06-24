@@ -1,6 +1,7 @@
+
+<!-- shop.html -->
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,143 +10,43 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
     <link rel="stylesheet" href="css/custom.css">
-
+    <link rel="stylesheet" href="[https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css](https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css)">
     <style>
-    #carrito-panel {
-        position: fixed;
-        top: 0;
-        right: -400px;
-        width: 350px;
-        height: 100%;
-        background-color: white;
-        box-shadow: -2px 0 5px rgba(0,0,0,0.2);
-        transition: right 0.3s ease;
-        padding: 20px;
-        overflow-y: auto;
-        z-index: 1000;
-    }
-
-    #carrito-panel.abierto {
-        right: 0;
-    }
-
-    #carrito-toggle {
-        position: fixed;
-        top: 20px;
-        right: 20px;
-        background-color: #28a745;
-        color: white;
-        border: none;
-        padding: 10px 15px;
-        border-radius: 5px;
-        cursor: pointer;
-        z-index: 1001;
-    }
-
-    #carrito-panel h4 {
-        margin-top: 0;
-    }
-
-    #cerrar-carrito {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        background: none;
-        border: none;
-        font-size: 1.2rem;
-        cursor: pointer;
-    }
-</style>
-    <style>
-        .category-card .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-            color: white;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            font-weight: bold;
-        }
+        #carrito-panel { position: fixed; top: 0; right: -400px; width: 380px; height: 100%; background-color: white; box-shadow: -3px 0 8px rgba(0, 0, 0, 0.15); transition: right 0.3s ease-in-out; padding: 25px; overflow-y: auto; z-index: 1050; display: flex; flex-direction: column; }
+        #carrito-panel.abierto { right: 0; }
+        #carrito-toggle { position: fixed; top: 15px; right: 20px; background-color: #28a745; color: white; border: none; padding: 10px 15px; border-radius: 50px; cursor: pointer; z-index: 1051; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        #carrito-contador { background-color: #dc3545; border-radius: 50%; padding: 2px 6px; font-size: 0.8rem; vertical-align: top; margin-left: 4px; }
+        #cerrar-carrito { position: absolute; top: 15px; right: 20px; background: none; border: none; font-size: 1.8rem; cursor: pointer; color: #6c757d; }
+        #carrito-lista { flex-grow: 1; }
+        .producto-placeholder { text-align: center; padding: 60px 20px; color: #6c757d; font-size: 1.1rem; }
+        .card-img-top { height: 160px; object-fit: cover; background-color: #f8f9fa; }
     </style>
 </head>
-
 <body>
     <header class="main-header">
-        <!-- Start Navigation -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav">
             <div class="container">
-                <!-- Start Header Navigation -->
                 <div class="navbar-header">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu"
-                        aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu">
                         <i class="fa fa-bars"></i>
                     </button>
-                    <!-- <a class="navbar-brand" href="index.html"><img src="images/logo.png" class="logo" alt=""></a> Falta cambiar el tamaño -->
                 </div>
-                <!-- End Header Navigation -->
-
-                <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
-                    <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
+                    <ul class="nav navbar-nav ml-auto">
                         <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
                         <li class="nav-item active"><a class="nav-link" href="shop.html">Tienda</a></li>
+                        <li class="nav-item"><a class="nav-link" href="recetas.html">Recetas</a></li>
                         <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
                     </ul>
                 </div>
-                <!-- /.navbar-collapse -->
-
-            </div>
-
-        </nav>
-        <!-- End Navigation -->
-    </header>
-
-    <!-- Sección de Filtros de Categoría -->
-    <section id="categorias" class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-4 text-green">Filtros</h2>
-            <div class="row justify-content-center mb-4">
-                <div class="col-auto">
-                    <button class="btn btn-outline-success filter-btn active" data-filter="all">Todo</button>
-                    <button class="btn btn-outline-success filter-btn" data-filter="vinos">Vinos</button>
+                <div id="auth-container" class="login-box d-flex align-items-center ml-4">
+                    <div id="logged-out-view" style="display: none;"><a href="registro.html" class="btn btn-outline-primary mr-2">Registrarse</a><a href="login.html" class="btn btn-primary">Iniciar Sesión</a></div>
+                    <div id="logged-in-view" style="display: none;"><span id="user-greeting" class="mr-3 text-dark"></span><button id="logout-btn" class="btn btn-outline-danger">Cerrar Sesión</button></div>
                 </div>
             </div>
-        </div>
-    </section>
-    <script>
-        // Asignar categorías a los productos
-        document.addEventListener('DOMContentLoaded', function () {
-            // Asignar data-category a cada producto
-            const productos = document.querySelectorAll('.card');
-            productos[3].setAttribute('data-category', 'vinos');
-            productos[4].setAttribute('data-category', 'vinos');
-            productos[5].setAttribute('data-category', 'vinos');
-            
+        </nav>
+    </header>
 
-            // Filtro
-            const filterBtns = document.querySelectorAll('.filter-btn');
-            filterBtns.forEach(btn => {
-                btn.addEventListener('click', function () {
-                    filterBtns.forEach(b => b.classList.remove('active'));
-                    this.classList.add('active');
-                    const filter = this.getAttribute('data-filter');
-                    productos.forEach(card => {
-                        if (filter === 'all' || card.getAttribute('data-category') === filter) {
-                            card.parentElement.style.display = '';
-                        } else {
-                            card.parentElement.style.display = 'none';
-                        }
-                    });
-                });
-            });
-        });
-        
-    </script>
-
-    <!-- Título de Página -->
     <div class="container mt-5 mb-3">
         <div class="title-all text-center">
             <h1>Tienda Botisur</h1>
@@ -153,194 +54,73 @@
         </div>
     </div>
 
-    <!-- Productos -->
     <div class="container">
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-            <div class="col mb-4">
-                <div class="card h-100">
-                    <img src="images/torobayo.jpg" class="card-img-top" alt="Cerveza Torobayo">
-                    <div class="card-body text-center">
-                        <h5 class="fw-bolder">Cerveza Torobayo</h5>
-                        <p>$8.500</p>
-                    </div>
-                    <div class="card-footer text-center">
-                        <a href="#" class="btn btn-outline-dark">Añadir al carrito</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col mb-4">
-                <div class="card h-100">
-                    <img src="images/cervezacristal.JPG" class="card-img-top" alt="Cerveza cristal">
-                    <div class="card-body text-center">
-                        <h5 class="fw-bolder">Cerveza Cristal</h5>
-                        <p>$10.000</p>
-                    </div>
-                    <div class="card-footer text-center">
-                        <a href="#" class="btn btn-outline-dark">Añadir al carrito</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col mb-4">
-                <div class="card h-100">
-                    <img src="images/bluelabel.jpg" class="card-img-top" alt="Blue Label">
-                    <div class="card-body text-center">
-                        <h5 class="fw-bolder">Blue Label Johnnie Walker</h5>
-                        <p>$300.000</p>
-                    </div>
-                    <div class="card-footer text-center">
-                        <a href="#" class="btn btn-outline-dark">Añadir al carrito</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- Segunda fila de productos -->
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-            <div class="col mb-4">
-                <div class="card h-100">
-                    <img src="images/vinopx.jpg" class="card-img-top" alt="vino px">
-                    <div class="card-body text-center">
-                        <h5 class="fw-bolder">Vino PX</h5>
-                        <p>$7.000</p>
-                    </div>
-                    <div class="card-footer text-center">
-                        <a href="#" class="btn btn-outline-dark">Añadir al carrito</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col mb-4">
-                <div class="card h-100">
-                    <img src="images/vinogato.jpg" class="card-img-top" alt="Vino gato">
-                    <div class="card-body text-center">
-                        <h5 class="fw-bolder">Vino Gato</h5>
-                        <p>$9.500</p>
-                    </div>
-                    <div class="card-footer text-center">
-                        <a href="#" class="btn btn-outline-dark">Añadir al carrito</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col mb-4">
-                <div class="card h-100">
-                    <img src="images/vino.jpg" class="card-img-top" alt="Vino">
-                    <div class="card-body text-center">
-                        <h5 class="fw-bolder">Vino</h5>
-                        <p>$15.000</p>
-                    </div>
-                    <div class="card-footer text-center">
-                        <a href="#" class="btn btn-outline-dark">Añadir al carrito</a>
-                    </div>
-                </div>
-            </div>
+        <div id="productos-container" class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+            <!-- Productos cargados dinámicamente -->
         </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white mt-5">
-        <div class="container py-4">
-            <div class="row">
-                <div class="col-md-6">
-                    <h5>Sobre Botisur</h5>
-                    <p>Ofrecemos las mejores bebidas para tus celebraciones, con atención y rapidez en cada pedido.</p>
+    <!-- Footer completo añadido -->
+    <footer>
+        <div class="footer-main">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-top-box">
+                            <h3>Horario de atención</h3>
+                            <ul class="list-time">
+                                <li>Lunes a Viernes: 08.00am a 05.00pm</li>
+                                <li>Sábado: 10.00am a 08.00pm</li>
+                                <li>Domingo: <span>Cerrado</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-top-box">
+                            <h3>Subscríbete</h3>
+                            <form class="newsletter-box">
+                                <div class="form-group"><input class="" type="email" name="Email" placeholder="Dirección de correo*" /><i class="fa fa-envelope"></i></div>
+                                <button class="btn hvr-hover" type="submit">Enviar</button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-12 col-sm-12">
+                        <div class="footer-top-box">
+                            <h3>Redes sociales</h3>
+                            <p>Síguenos en nuestras redes sociales.</p>
+                            <ul>
+                                <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
+                                <li><a href="#"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
-                <div class="col-md-6 text-md-right">
-                    <h5>Contáctanos</h5>
-                    <p>Email: contacto@botisur.cl</p>
-                    <p>Teléfono: +56 9 1234 5678</p>
-                </div>
+                <hr>
             </div>
         </div>
-        <div class="bg-secondary text-center py-2">
-            <p class="mb-0">&copy; 2025 Botisur. Todos los derechos reservados.</p>
-        </div>
     </footer>
+    <div class="footer-copyright">
+        <p class="footer-company">Todos los derechos reservados. &copy; 2025 <a href="#">Botisur</a> </p>
+    </div>
 
-    <script src="js/jquery.min.js"></script>
+    <!-- Carrito y otros elementos -->
+    <button id="carrito-toggle">🛒<span id="carrito-contador">0</span></button>
+    <div id="carrito-panel">
+        <button id="cerrar-carrito">&times;</button>
+        <h4>🛒 Tu Carrito</h4>
+        <hr>
+        <ul id="carrito-lista" class="list-group list-group-flush mb-3"></ul>
+        <div class="mt-auto">
+            <hr>
+            <h5 class="d-flex justify-content-between"><strong>Total:</strong> <span id="carrito-total">$0</span></h5>
+            <button id="pagar-btn" class="btn btn-success btn-block mt-3">Pagar</button>
+        </div>
+    </div>
+
+    <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
-
-    <!-- Botón flotante para abrir carrito -->
-<button id="carrito-toggle">🛒 Ver Carrito</button>
-
-<!-- Panel lateral del carrito -->
-<div id="carrito-panel">
-    <button id="cerrar-carrito">✖</button>
-    <h4>🛒 Tu Carrito</h4>
-    <ul id="carrito-lista" class="list-group mb-3"></ul>
-    <p><strong>Total:</strong> $<span id="carrito-total">0</span></p>
-</div>
-
-<script>
-    const carrito = [];
-
-    document.querySelectorAll('.card-footer .btn').forEach((boton, index) => {
-        boton.addEventListener('click', (e) => {
-            e.preventDefault();
-            const card = boton.closest('.card');
-            const nombre = card.querySelector('h5').innerText;
-            const precioTexto = card.querySelector('p').innerText.replace('$', '').replace(/\./g, '');
-            const precio = parseInt(precioTexto);
-            agregarAlCarrito(nombre, precio);
-        });
-    });
-
-    function agregarAlCarrito(nombre, precio) {
-        const productoExistente = carrito.find(p => p.nombre === nombre);
-        if (productoExistente) {
-            productoExistente.cantidad++;
-        } else {
-            carrito.push({ nombre, precio, cantidad: 1 });
-        }
-        actualizarCarrito();
-        abrirCarrito();
-    }
-
-    function actualizarCarrito() {
-        const lista = document.getElementById('carrito-lista');
-        lista.innerHTML = '';
-        let total = 0;
-
-        if (carrito.length === 0) {
-            lista.innerHTML = '<li class="list-group-item text-center">Tu carrito está vacío.</li>';
-            document.getElementById('carrito-total').innerText = '0';
-            return;
-        }
-
-        carrito.forEach((producto, index) => {
-            total += producto.precio * producto.cantidad;
-            const li = document.createElement('li');
-            li.className = 'list-group-item d-flex justify-content-between align-items-center';
-            li.innerHTML = `
-                ${producto.nombre} x${producto.cantidad} - $${(producto.precio * producto.cantidad).toLocaleString()}
-                <button class="btn btn-danger btn-sm" onclick="eliminarDelCarrito(${index})">Eliminar</button>
-            `;
-            lista.appendChild(li);
-        });
-
-        document.getElementById('carrito-total').innerText = total.toLocaleString();
-    }
-
-    function eliminarDelCarrito(index) {
-        carrito.splice(index, 1);
-        actualizarCarrito();
-    }
-
-    function abrirCarrito() {
-        document.getElementById('carrito-panel').classList.add('abierto');
-        document.getElementById('carrito-toggle').style.display = 'none';  // Ocultar botón
-    }
-
-    function cerrarCarrito() {
-        document.getElementById('carrito-panel').classList.remove('abierto');
-        document.getElementById('carrito-toggle').style.display = 'block'; // Mostrar botón
-    }
-
-    document.getElementById('carrito-toggle').addEventListener('click', abrirCarrito);
-    document.getElementById('cerrar-carrito').addEventListener('click', cerrarCarrito);
-
-    document.addEventListener('DOMContentLoaded', () => {
-        actualizarCarrito();
-    });
-</script>
-
+    <script src="js/auth.js"></script>
+    <script src="js/shop-logic.js"></script> <!-- Lógica movida a un archivo externo -->
 </body>
-
 </html>

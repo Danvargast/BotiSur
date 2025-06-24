@@ -1,404 +1,83 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="es">
-<!-- Basic -->
-
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-
-    <!-- Mobile Metas -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <!-- Site Metas -->
     <title>Botisur</title>
-    <meta name="keywords" content="">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <!-- Site Icons -->
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" href="images/logo.jpg">
-
-    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- Site CSS -->
     <link rel="stylesheet" href="css/style.css">
-    <!-- Responsive CSS -->
     <link rel="stylesheet" href="css/responsive.css">
-    <!-- Custom CSS -->
     <link rel="stylesheet" href="css/custom.css">
-    <!-- FontAwesome CSS -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
-
 </head>
 
 <body>
     <!-- Start Main Top -->
-    <div class="main-top">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-12">
-                    <!-- Modificar esta sección -->
-                    <div class="login-box d-flex justify-content-end align-items-center py-2">
-                        <a href="registro.html" class="btn btn-outline-primary mr-2">Registrarse</a>
-                        <a href="login.html" class="btn btn-primary">Iniciar Sesión</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    </div>
-    </div>
-    <!-- End Main Top -->
-
-    <!-- Start Main Top -->
     <header class="main-header">
-        <!-- Start Navigation -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-default bootsnav">
             <div class="container">
-                <!-- Start Header Navigation -->
                 <div class="navbar-header">
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu"
-                        aria-controls="navbars-rs-food" aria-expanded="false" aria-label="Toggle navigation">
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-menu">
                         <i class="fa fa-bars"></i>
                     </button>
-                    <!-- <a class="navbar-brand" href="index.html"><img src="images/logo.png" class="logo" alt=""></a> Falta cambiar el tamaño -->
                 </div>
-                <!-- End Header Navigation -->
-
-                <!-- Collect the nav links, forms, and other content for toggling -->
                 <div class="collapse navbar-collapse" id="navbar-menu">
-                    <ul class="nav navbar-nav ml-auto" data-in="fadeInDown" data-out="fadeOutUp">
+                    <ul class="nav navbar-nav ml-auto">
                         <li class="nav-item active"><a class="nav-link" href="index.html">Inicio</a></li>
                         <li class="nav-item"><a class="nav-link" href="shop.html">Tienda</a></li>
+                        <li class="nav-item"><a class="nav-link" href="recetas.html">Recetas</a></li>
                         <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
                     </ul>
                 </div>
-                <!-- /.navbar-collapse -->
-
+                <div id="auth-container" class="login-box d-flex align-items-center ml-4">
+                    <div id="logged-out-view" style="display: none;">
+                        <a href="registro.html" class="btn btn-outline-primary mr-2">Registrarse</a>
+                        <a href="login.html" class="btn btn-primary">Iniciar Sesión</a>
+                    </div>
+                    <div id="logged-in-view" style="display: none;">
+                        <span id="user-greeting" class="mr-3 text-dark"></span>
+                        <button id="logout-btn" class="btn btn-outline-danger">Cerrar Sesión</button>
+                    </div>
+                </div>
             </div>
-
         </nav>
-        <!-- End Navigation -->
     </header>
     <!-- End Main Top -->
-
-    <!-- Start Top Search -->
-    <div class="top-search">
-        <div class="container">
-            <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-search"></i></span>
-                <input type="text" class="form-control" placeholder="Search">
-                <span class="input-group-addon close-search"><i class="fa fa-times"></i></span>
-            </div>
-        </div>
-    </div>
-    <!-- End Top Search -->
 
     <!-- Start Slider -->
     <div id="slides-shop" class="cover-slides">
         <ul class="slides-container">
-            <li class="text-center">
-                <img src="images/fotobanner1.jpg" alt="">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h1 class="m-b-20"><strong>Bienvenido a <br> Botisur</strong></h1>
-                            <p class="m-b-40">Descubre la mejor selección de cervezas, vinos y destilados para cada
-                                ocasión. ¡Calidad, variedad y precios especiales en Botisur!</p>
-                            <p><a class="btn hvr-hover" href="shop.html">Comprar</a></p>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="text-center">
-                <img src="images/barrilesbanner.jpg" alt="">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h1 class="m-b-20"><strong>Bienvenido a <br> Botisur</strong></h1>
-                            <p class="m-b-40">Disfruta de una amplia variedad de cervezas, vinos y destilados
-                                seleccionados especialmente para ti. Vive la experiencia Botisur y encuentra el producto
-                                ideal para cada momento.</p>
-                            <p><a class="btn hvr-hover" href="shop.html">Comprar</a></p>
-                        </div>
-                    </div>
-                </div>
-            </li>
-            <li class="text-center">
-                <img src="images/vinobanner.jpg" alt="">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h1 class="m-b-20"><strong>Bienvenido a <br> Botisur</strong></h1>
-                            <p class="m-b-40">Descubre cómo nuestros clientes disfrutan de la mejor selección de bebidas
-                                en Botisur. Explora nuestras tendencias y novedades para encontrar el producto ideal en
-                                cada ocasión.</p>
-                            <p><a class="btn hvr-hover" href="shop.html">Comprar</a></p>
-                        </div>
-                    </div>
-                </div>
-            </li>
+            <!-- ... (contenido de los slides) ... -->
         </ul>
-        <div class="slides-navigation">
-            <a href="#" class="next"><i class="fa fa-angle-right" aria-hidden="true"></i></a>
-            <a href="#" class="prev"><i class="fa fa-angle-left" aria-hidden="true"></i></a>
-        </div>
     </div>
     <!-- End Slider -->
+    
+    <!-- Ofertas de la Semana -->
     <section class="products-box">
         <div class="container">
             <div class="title-all text-center">
                 <h1>🔥 Ofertas de la Semana 🔥</h1>
             </div>
-            <div id="ofertasCarousel" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="row g-4">
-                            <!-- Slide 1: Tarjeta 1 -->
-                            <div class="col-6">
-                                <div class="card h-100 position-relative d-flex flex-column">
-                                    <div class="badge bg-danger text-white position-absolute"
-                                        style="top:0.5rem; right:0.5rem;">
-                                        🔥 ¡Oferta!
-                                    </div>
-                                    <img class="card-img-top" src="images/packcerveza.jpg" alt="Cerveza corona">
-                                    <div class="card-body text-center">
-                                        <h5 class="fw-bolder">Pack cervezas corona</h5>
-                                        <p>
-                                            <del class="text-muted" style="color:#222 !important;">$4.000</del>
-                                            <strong style="color:#222;">$2.200</strong>
-                                        </p>
-                                        <div class="countdown" data-end="2025-05-30T23:59:59" style="color:#222;">
-                                            00:00:00</div>
-                                    </div>
-                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent mt-auto">
-                                        <div class="text-center">
-                                            <a href="shop.html" class="btn btn-outline-dark mt-auto">Añadir al carrito</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Slide 1: Tarjeta 2 -->
-                            <div class="col-6">
-                                <div class="card h-100 position-relative d-flex flex-column">
-                                    <div class="badge bg-danger text-white position-absolute"
-                                        style="top:0.5rem; right:0.5rem;">
-                                        🔥 ¡Oferta!
-                                    </div>
-                                    <img class="card-img-top" src="images/vinotintoreserva.jpg" alt="Vino Tinto">
-                                    <div class="card-body text-center">
-                                        <h5 class="fw-bolder">Vino Tinto Reserva</h5>
-                                        <p>
-                                            <del class="text-muted" style="color:#222 !important;">$15.000</del>
-                                            <strong style="color:#222;">$10.000</strong>
-                                        </p>
-                                        <div class="countdown" data-end="2025-05-28T23:59:59" style="color:#222;">
-                                            00:00:00</div>
-                                    </div>
-                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent mt-auto">
-                                        <div class="text-center">
-                                            <a href="shop.html" class="btn btn-outline-dark mt-auto">Añadir al carrito</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="row g-4">
-                            <!-- Slide 2: Tarjeta 3 -->
-                            <div class="col-6">
-                                <div class="card h-100 position-relative d-flex flex-column">
-                                    <div class="badge bg-danger text-white position-absolute"
-                                        style="top:0.5rem; right:0.5rem;">
-                                        🔥 ¡Oferta!
-                                    </div>
-                                    <img class="card-img-top" src="images/combopiscola.jpg" alt="promo piscola">
-                                    <div class="card-body text-center">
-                                        <h5 class="fw-bolder">Promo Piscola</h5>
-                                        <p>
-                                            <del class="text-muted" style="color:#222 !important;">$12.000</del>
-                                            <strong style="color:#222;">$10.000</strong>
-                                        </p>
-                                        <div class="countdown" data-end="2025-05-29T23:59:59" style="color:#222;">
-                                            00:00:00</div>
-                                    </div>
-                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent mt-auto">
-                                        <div class="text-center">
-                                            <a href="shop.html" class="btn btn-outline-dark mt-auto">Añadir al carrito</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Slide 2: Tarjeta 4 -->
-                            <div class="col-6">
-                                <div class="card h-100 position-relative d-flex flex-column">
-                                    <div class="badge bg-danger text-white position-absolute"
-                                        style="top:0.5rem; right:0.5rem;">
-                                        🔥 ¡Oferta!
-                                    </div>
-                                    <img class="card-img-bottom" src="images/bluelabel.jpg" alt="blue label">
-                                    <div class="card-body text-center">
-                                        <h5 class="fw-bolder">Blue Label Johnnie Walker</h5>
-                                        <p>
-                                            <del class="text-muted" style="color:#222 !important;">$300.000</del>
-                                            <strong style="color:#222;">$250.000</strong>
-                                        </p>
-                                        <div class="countdown" data-end="2025-05-27T23:59:59" style="color:#222;">
-                                            00:00:00</div>
-                                    </div>
-                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent mt-auto">
-                                        <div class="text-center">
-                                            <a href="shop.html" class="btn btn-outline-dark mt-auto">Añadir al carrito</a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <!-- Controles del carrusel -->
-                <a class="carousel-control-prev" href="#ofertasCarousel" role="button" data-slide="prev">
-                    <span aria-hidden="true"><i class="fa fa-angle-left"></i></span>
-                    <span class="sr-only">Anterior</span>
-                </a>
-                <a class="carousel-control-next" href="#ofertasCarousel" role="button" data-slide="next">
-                    <span aria-hidden="true"><i class="fa fa-angle-right"></i></span>
-                    <span class="sr-only">Siguiente</span>
-                </a>
+            <div id="ofertas-container" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <!-- Las ofertas se cargarán aquí -->
             </div>
         </div>
     </section>
 
-
-    <style>
-        /* Ajustes de estilos adicionales para animaciones y temporizador */
-        .offer-badge {
-            top: 0.5rem;
-            right: 0.5rem;
-            /* Ejemplo: efecto de pulso (usa @keyframes predefinidos en style.css) */
-            animation: bounceY 1s infinite;
-        }
-
-        .countdown {
-            font-size: 0.9rem;
-            color: #dc3545;
-            /* color rojo oscuro para urgencia */
-            font-weight: bold;
-            margin-top: 0.5rem;
-        }
-    </style>
-
-    <script>
-        // Script de cuenta regresiva para cada tarjeta de oferta
-        document.querySelectorAll('.countdown').forEach(function (el) {
-            var endTime = new Date(el.getAttribute('data-end')).getTime();
-            var timer = setInterval(function () {
-                var now = new Date().getTime();
-                var distance = endTime - now;
-                if (distance < 0) {
-                    clearInterval(timer);
-                    el.innerText = "Oferta terminada";
-                    return;
-                }
-                var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-                var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-                var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-                // Formatear como DD:HH:MM:SS
-                el.innerText = (days > 0 ? days + "d " : "")
-                    + ("0" + hours).slice(-2) + "h:"
-                    + ("0" + minutes).slice(-2) + "m:"
-                    + ("0" + seconds).slice(-2) + "s";
-            }, 1000);
-        });
-    </script>
-
-
-    <!-- Start Products -->
+    <!-- Productos más vendidos -->
     <div class="products-box">
         <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="title-all text-center">
-                        <h1>Nuestros productos más vendidos</h1>
-                        <p>Explora nuestra selección de cervezas, vinos y refrescos para cada ocasión. ¡Calidad y sabor
-                            al mejor precio!</p>
-                    </div>
-                </div>
+            <div class="title-all text-center">
+                <h1>Nuestros productos más vendidos</h1>
+                <p>Explora nuestra selección de cervezas, vinos y refrescos para cada ocasión.</p>
             </div>
-            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
-                <div class="col mb-5">
-                    <div class="card h-100 position-relative">
-                        <img class="card-img-top" src="images/torobayo.jpg" alt="Cerveza Torobayo" />
-                        <div class="card-body p-4 text-center">
-                            <h5 class="fw-bolder">Cerveza Torobayo</h5>
-                            $8.500
-                        </div>
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center">
-                                <a href="shop.html" class="btn btn-outline-dark mt-auto">Añadir al carrito</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-5">
-                    <div class="card h-100 position-relative">
-                        <img class="card-img-top" src="images/cervezacristal.jpg" alt="Cerveza Cristal" />
-                        <div class="card-body p-4 text-center">
-                            <h5 class="fw-bolder">Cerveza Cristal</h5>
-                            $2.300
-                        </div>
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center">
-                                <a href="shop.html" class="btn btn-outline-dark mt-auto">Añadir al carrito</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-5">
-                    <div class="card h-100 position-relative">
-                        <img class="card-img-top" src="images/bebida.jpg" alt="Bebida Coca-Cola" />
-                        <div class="card-body p-4 text-center">
-                            <h5 class="fw-bolder">Bebida Coca-Cola</h5>
-                            $2.000
-                        </div>
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center">
-                                <a href="shop.html" class="btn btn-outline-dark mt-auto">Añadir al carrito</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col mb-5">
-                    <div class="card h-100 position-relative">
-                        <img class="card-img-top" src="images/vino.jpg" alt="Vino Cabernet Sauvignon" />
-                        <div class="card-body p-4 text-center">
-                            <h5 class="fw-bolder">Vino Cabernet Sauvignon</h5>
-                            $12.000
-                        </div>
-                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                            <div class="text-center">
-                                <a href="shop.html" class="btn btn-outline-dark mt-auto">Añadir al carrito</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div id="destacados-container" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+                <!-- Los productos destacados se cargarán aquí -->
             </div>
         </div>
     </div>
-    <!-- End Products -->
-
-
-
-
-
 
     <!-- Start Footer  -->
     <footer>
@@ -417,7 +96,7 @@
                     </div>
                     <div class="col-lg-4 col-md-12 col-sm-12">
                         <div class="footer-top-box">
-                            <h3>Subscribete</h3>
+                            <h3>Subscríbete</h3>
                             <form class="newsletter-box">
                                 <div class="form-group">
                                     <input class="" type="email" name="Email" placeholder="Dirección de correo*" />
@@ -430,11 +109,9 @@
                     <div class="col-lg-4 col-md-12 col-sm-12">
                         <div class="footer-top-box">
                             <h3>Redes sociales</h3>
-                            <p>Síguenos en nuestras redes sociales y entérate de nuestras últimas novedades.</p>
+                            <p>Síguenos en nuestras redes sociales.</p>
                             <ul>
                                 <li><a href="#"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
-                                <li><a href="#"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
                                 <li><a href="#"><i class="fab fa-instagram" aria-hidden="true"></i></a></li>
                                 <li><a href="#"><i class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
                             </ul>
@@ -442,57 +119,14 @@
                     </div>
                 </div>
                 <hr>
-                <div class="row">
-                    <div class="col-lg-4 col-md-12 col-sm-12">
-                        <div class="footer-widget">
-                            <h4>Acerca de Botisur</h4>
-                            <p>En Botisur, nos apasiona ofrecerte la mejor selección de licores y bebidas para tus
-                                celebraciones y momentos especiales. ¡Descubre nuestra variedad y disfruta de la calidad
-                                que nos distingue!</p>
-                            <p>Encuentra el regalo perfecto o el complemento ideal para tus reuniones. ¡Brindamos por
-                                ti!</p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-12 col-sm-12">
-                        <div class="footer-link ">
-                            <h4>Información</h4>
-                            <ul>
-                                <li><a href="#">Términos y condiciones</a></li>
-                                <li><a href="#">Política de privacidad</a></li>
-                                <li><a href="#">Información de envío</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-4 col-md-12 col-sm-12">
-                        <div class="footer-link-contact">
-                            <h4>Contáctanos</h4>
-                            <ul>
-                                <li>
-                                    <p><i class="fas fa-map-marker-alt"></i>Dirección: Av. Los Robles 1234, <br>Puerto
-                                        Montt, Región de los Lagos </p>
-                                </li>
-                                <li>
-                                    <p><i class="fas fa-phone-square"></i>Teléfono: <a href="tel:+56912345678">+56 9
-                                            1234 5678</a></p>
-                                </li>
-                                <li>
-                                    <p><i class="fas fa-envelope"></i>Email: <a
-                                            href="mailto:contacto@botisur.cl">contacto@botisur.cl</a></p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </footer>
     <!-- End Footer  -->
 
-    <!-- Start copyright  -->
     <div class="footer-copyright">
         <p class="footer-company">Todos los derechos reservados. &copy; 2025 <a href="#">Botisur</a> </p>
     </div>
-    <!-- End copyright  -->
 
     <a href="#" id="back-to-top" title="Back to top" style="display: none;">&uarr;</a>
 
@@ -500,12 +134,65 @@
     <script src="js/jquery-3.2.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
-    <!-- ALL PLUGINS -->
     <script src="js/jquery.superslides.min.js"></script>
     <script src="js/bootsnav.js."></script>
-    <script src="js/images-loded.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>      
     <script src="js/custom.js"></script>
-</body>
+    <script src="js/auth.js"></script>
+    <script>
+        const API_URL = 'http://127.0.0.1:8000';
 
+        // Función para crear la tarjeta de un producto
+        function createProductCard(producto) {
+            const imageUrl = producto.imagen_url || `https://placehold.co/400x300/e8e8e8/666?text=${encodeURIComponent(producto.nombre)}`;
+            const cardHtml = `
+                <div class="col mb-5">
+                    <div class="card h-100">
+                        <img class="card-img-top" src="${imageUrl}" alt="${producto.nombre}" style="height: 200px; object-fit: cover;" onerror="this.onerror=null;this.src='https://placehold.co/400x300/e8e8e8/666?text=Imagen no disponible';"/>
+                        <div class="card-body p-4 text-center">
+                            <h5 class="fw-bolder">${producto.nombre}</h5>
+                            $${parseFloat(producto.precio).toLocaleString('es-CL')}
+                        </div>
+                        <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
+                            <div class="text-center">
+                                <a href="shop.html" class="btn btn-outline-dark mt-auto">Ver en tienda</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>`;
+            return cardHtml;
+        }
+
+        // Función para cargar los productos en una sección específica
+        async function loadProducts(containerId, count) {
+            const container = document.getElementById(containerId);
+            container.innerHTML = '<div class="col-12 text-center"><p>Cargando...</p></div>';
+            try {
+                const response = await fetch(`${API_URL}/productos/`);
+                if (!response.ok) throw new Error('Error de conexión');
+                const productos = await response.json();
+                
+                container.innerHTML = '';
+                // Tomamos solo los primeros 'count' productos
+                const productosAMostrar = productos.slice(0, count);
+
+                if (productosAMostrar.length === 0) {
+                     container.innerHTML = '<div class="col-12 text-center"><p>No hay productos para mostrar.</p></div>';
+                } else {
+                    productosAMostrar.forEach(producto => {
+                        container.innerHTML += createProductCard(producto);
+                    });
+                }
+            } catch (error) {
+                container.innerHTML = `<div class="col-12 text-center"><p>No se pudieron cargar los productos.</p></div>`;
+            }
+        }
+        
+        document.addEventListener('DOMContentLoaded', () => {
+            // Cargar 3 productos en la sección de ofertas
+            loadProducts('ofertas-container', 3);
+            // Cargar 3 productos en la sección de destacados
+            loadProducts('destacados-container', 3);
+        });
+    </script>
+</body>
 </html>
