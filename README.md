@@ -1,8 +1,3 @@
-¡Excelente\! Con toda esta información, puedo generar una versión actualizada y completa de tu archivo `README.md` que cumple con las pautas de tu evaluación.
-
-Aquí tienes la propuesta. He reestructurado y enriquecido el contenido basándome en los archivos de tu proyecto y tus respuestas.
-
------
 
 # Botillería BotiSur :beer:
 
