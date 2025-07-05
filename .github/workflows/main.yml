@@ -1,0 +1,42 @@
+# Nombre del flujo de trabajo que aparecerá en la pestaña Actions
+name: Revisar Calidad del Código
+
+# Define cuándo se debe ejecutar esta automatización
+on:
+  # Se ejecutará cada vez que hagas "push" a cualquier rama
+  push:
+
+# Define los trabajos (tareas) que se van a ejecutar
+jobs:
+  # Nombramos nuestro trabajo "lint" (revisar código)
+  lint:
+    # El tipo de máquina virtual donde se ejecutará
+    runs-on: ubuntu-latest
+
+    # Los pasos que seguirá la automatización
+    steps:
+      # 1. Descarga tu código del repositorio a la máquina virtual
+      - name: Clonar repositorio
+        uses: actions/checkout@v4
+
+      # 2. Configura el entorno de Python
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10' # Usamos una versión de Python
+
+      # 3. Instala las dependencias de tu proyecto y el revisor de código
+      - name: Instalar dependencias
+        run: |
+          python -m pip install --upgrade pip
+          pip install flake8
+          if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+      
+      # 4. Ejecuta el revisor de código (linter)
+      - name: Ejecutar Flake8 Linter
+        run: |
+          # Revisa el código buscando errores, ignorando algunas reglas comunes.
+          # E501: línea demasiado larga.
+          # W292: no hay nueva línea al final del archivo.
+          flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+          flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
