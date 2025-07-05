@@ -1,31 +1,126 @@
-![image alt](https://github.com/Danvargast/BotiSur/blob/467bd0e9c12c8d3cec57d038fc8fdad774d8159c/Avances/Semana8/logo%20botisur.png)
+¡Excelente\! Con toda esta información, puedo generar una versión actualizada y completa de tu archivo `README.md` que cumple con las pautas de tu evaluación.
 
-# Botilleria BotiSur :beer:
-Repositorio botilleria BotiSur
+Aquí tienes la propuesta. He reestructurado y enriquecido el contenido basándome en los archivos de tu proyecto y tus respuestas.
 
-# Descripcion del proyecto :speech_balloon:
-Este proyecto consiste en un sistema de delivery y pedidos para la botilleria BotiSur, en la cual se podra pedir diversos tipos de productos, por ejemplo bebidas, cervezas, licores fuertes, etc. El sistema añadira todo lo que quieras comprar a el carrito de compra. Este proyecto almacena datos utilizando MySQL.
+-----
 
-# Tecnologias usadas :computer:
-  |      Frontend       |      Backend    |    Base de datos       |
-  |---------------------|-----------------|------------------------|
-  |HTML, CSS, JavaScript|      Python     |MySQL,XAMPP, phpMyAdmin |
-  |<img src="https://github.com/Danvargast/BotiSur/blob/7d915fe797034d3fb5e7c271d6ce60cd392837e9/Avances/semana%2011/HTML-5-Badge-Logo.png" width="90"> <img src="https://github.com/Danvargast/BotiSur/blob/5c2abb5d19d6814bc22e4b7a21eeb310302b2a02/Avances/semana%2011/css-3.png" width="60">  <img src="https://github.com/Danvargast/BotiSur/blob/f508270d0c881bac2d65b0ecb6c0b8c265af262c/Avances/semana%2011/java-script.png" width="50"> |   <img src="https://github.com/Danvargast/BotiSur/blob/5e618d2e6cafb2497882093cf8748ff91a5a8b5d/Avances/semana%2011/python.png" width="60"> |  <img src="https://github.com/Danvargast/BotiSur/blob/c898f174a45ab4ecfddac53f318a8200f8d8e253/Avances/semana%2011/database.png" width="60">  <img src="https://github.com/Danvargast/BotiSur/blob/7d485d3d0d4af9efb0854bc2f753b7773c1b9a66/Avances/semana%2011/xampp.png" width="70">  <img src="https://github.com/Danvargast/BotiSur/blob/7d485d3d0d4af9efb0854bc2f753b7773c1b9a66/Avances/semana%2011/phpmyadmin_logo_icon_168906.png" width="100">
+# Botillería BotiSur :beer:
 
-# Metodologia de Desarrollo :calendar: 
-El desarrollo seguirá la metodología ágil Scrum, organizando el trabajo en sprints semanales. Esta estrategia permitirá una entrega progresiva y flexible, asegurando mejoras continuas durante el desarrollo del sistema.
+Repositorio oficial del proyecto BotiSur, un sistema de pedidos y delivery para una botillería online.
 
-# Roles del Equipo :busts_in_silhouette:
-Lider de equipo: Daniel Vargas.
+## :speech\_balloon: Descripción del Proyecto
 
-Desarrollador Frontend: Yeisson Thomas.
+**BotiSur** es una aplicación web que cuenta con un backend desarrollado en **FastAPI** para gestionar una botillería online. El sistema permite a los usuarios registrarse, iniciar sesión, explorar un catálogo de productos, y realizar compras. Además, incluye una funcionalidad especial que se conecta a una API externa ([TheCocktailDB](https://www.thecocktaildb.com/)) para buscar y mostrar recetas de cócteles según el ingrediente que elija el usuario.
 
-Desarrollador Backend: Alvaro Oyarzun.
+[cite\_start]El backend se encarga de toda la lógica de negocio, incluyendo la autenticación de usuarios mediante tokens JWT, la gestión de inventario, y el procesamiento de ventas[cite: 1]. La información se almacena en una base de datos **PostgreSQL** gestionada a través de **Supabase**.
 
-Diseñador UI/UX: Rodrigo Ruiz.
+-----
 
-# Licencia :page_facing_up:
-Este proyecto utiliza la [MIT License](https://opensource.org/licenses/MIT).
+## :busts\_in\_silhouette: Integrantes del Equipo
 
-# Contacto :email:
-En caso de tener una duda, contactarse con dan.vargast@duocuc.cl **
+  * **Líder de Equipo:** Daniel Vargas
+  * **Desarrollador Frontend:** Yeisson Thomas
+  * **Desarrollador Backend:** Alvaro Oyarzun
+  * **Diseñador UI/UX:** Rodrigo Ruiz
+
+-----
+
+## :computer: Tecnologías Utilizadas
+
+| Área | Tecnología |
+| :--- | :--- |
+| **Backend** | Python, FastAPI, SQLAlchemy, Uvicorn |
+| **Base de Datos** | PostgreSQL (Supabase) |
+| **Frontend** | HTML, CSS, JavaScript |
+| **Autenticación** | python-jose (JWT), passlib (bcrypt) |
+| **Herramientas** | Git, GitHub, Visual Studio Code |
+
+-----
+
+## :rocket: Instalación y Ejecución
+
+Sigue estos pasos para configurar y ejecutar el proyecto en tu máquina local.
+
+### **1. Prerrequisitos**
+
+Asegúrate de tener instalado el siguiente software:
+
+  * [Git](https://git-scm.com/)
+  * [Python 3.9](https://www.python.org/downloads/) o superior
+  * [Visual Studio Code](https://code.visualstudio.com/)
+  * La extensión **Live Server** en VS Code.
+
+### **2. Clonar el Repositorio**
+
+```bash
+git clone https://github.com/Danvargast/BotiSur.git
+cd BotiSur
+```
+
+### **3. Configurar el Backend**
+
+1.  **Crear el archivo de entorno:**
+
+      * Dentro de la carpeta del proyecto, crea un archivo llamado `.env`.
+      * Añade las credenciales de tu base de datos de Supabase. El archivo debe tener la siguiente estructura:
+
+    <!-- end list -->
+
+    ```env
+    DATABASE_URL="postgresql://user:password@host:port/dbname"
+    SECRET_KEY="tu_clave_secreta_para_jwt"
+    ```
+
+2.  **Crear y activar un entorno virtual:**
+
+      * Navega a la carpeta del proyecto en tu terminal.
+      * Crea el entorno:
+        ```bash
+        python -m venv venv
+        ```
+      * Activa el entorno:
+          * **Windows:** `.\venv\Scripts\activate`
+          * **macOS/Linux:** `source venv/bin/activate`
+
+3.  **Instalar dependencias:**
+
+      * Asegúrate de que el entorno virtual esté activado.
+      * Ejecuta el siguiente comando para instalar las librerías de Python:
+        ```bash
+        pip install -r requirements.txt
+        ```
+
+4.  **Iniciar el servidor del backend:**
+
+      * Con el entorno virtual activado, ejecuta:
+        ```bash
+        uvicorn main:app --reload
+        ```
+      * El backend estará funcionando en `http://127.0.0.1:8000`. No cierres esta terminal.
+
+### **4. Ejecutar el Frontend**
+
+1.  Abre la carpeta del proyecto en Visual Studio Code.
+2.  Haz clic derecho sobre el archivo `index.html` (o cualquier otra vista como `login.html`).
+3.  Selecciona la opción **"Open with Live Server"**.
+4.  Tu navegador se abrirá automáticamente con la página web funcionando.
+
+-----
+
+## :link: Enlace al Despliegue
+
+Puedes acceder a la versión en producción del proyecto a través del siguiente enlace:
+
+> **[Enlace al sitio web]** (Aquí debes pegar el enlace cuando lo tengas desplegado)
+
+-----
+
+## :page\_facing\_up: Licencia
+
+Este proyecto está bajo la [Licencia MIT](https://opensource.org/licenses/MIT).
+
+-----
+
+## :email: Contacto
+
+Para cualquier duda o consulta, puedes contactar a `dan.vargast@duocuc.cl`.
